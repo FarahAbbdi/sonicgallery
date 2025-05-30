@@ -1,0 +1,111 @@
+/* header.css */
+
+/* === CALLOUT BAR === */
+.callout-bar {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* === NAVIGATION === */
+
+.nav-section {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eee;  /* FOR TESTING */
+}
+
+.nav-left,
+.nav-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.nav-left {
+  justify-content: flex-start;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--color-black);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 3px;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  border-bottom-color: var(--color-black); 
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo picture img {
+  height: 4rem;
+  width: auto;
+  display: block;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.icon {
+    all: unset; 
+    cursor: pointer;
+}
+
+/* TO DO ADD ICON INTERACTIVE/ANIMATION */
+
+.menu-toggle {
+  all: unset;
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-toggle img {
+  height: 24px;
+  width: 24px;
+}
+
+/* === RESPONSIVE BREAKPOINTS === */
+@media (max-width: 1000px) {
+  .nav-left {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-section {
+    justify-content: space-between;
+  }
+}
