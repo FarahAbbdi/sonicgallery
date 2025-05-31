@@ -30,3 +30,7 @@ a {
   color: var(--color-accent);
   text-decoration: none;
 }
+
+p {
+  font-weight: 100;
+}
