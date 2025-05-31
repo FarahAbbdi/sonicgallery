@@ -45,7 +45,15 @@
     gap: 2rem;
 }
 
-.nav-links li a {
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li a,
+.nav-links li button.dropdown-toggle {
+  background: none;
+  border: none;
   text-decoration: none;
   color: var(--color-black);
   font-size: 1rem;
@@ -96,6 +104,38 @@
 .menu-toggle img {
   height: 24px;
   width: 24px;
+}
+
+/* === DROP DOWN  === */
+.dropdown-nav {
+  display: none;   
+  width: 100%;   
+  background: var(--color-white);
+  padding: 2rem 2rem;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 1; 
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-nav.open {
+  display: block;
+}
+
+.dropdown-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.dropdown-menu li a:hover {
+  text-decoration: underline;
 }
 
 /* === RESPONSIVE BREAKPOINTS === */

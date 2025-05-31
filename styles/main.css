@@ -1,100 +1,66 @@
-/* === HERO SECTION === */
+/* === shared.css === */
 
-.hero {
-  position: relative;
-  height: calc(100vh - 120px); 
-  min-height: 400px;             
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-align: center;
-  color: white;
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Nobile:wght@100..900&display=swap');
+
+/* Root variables for consistent theming */
+:root {
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey: #f0f0f0;
+
+  /* Fonts */
+  --font-main: 'Nobile', sans-serif;
 }
 
-.hero-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
+/* === BASE RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: var(--font-main);
+  color: var(--color-black);
+  background-color: var(--color-white);
   height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 90%;
-  width: 100%;
+/* Flex column layout to allow footer sticking to bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+/* Utility class to lock body scrolling (e.g., when modal open) */
+.body-lock {
+  overflow: hidden;
+  height: 100vh;
 }
 
-.hero-text p {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+/* Main content area grows to fill available space */
+main {
+  flex: 1;
 }
 
-.hero-cta {
-  display: inline-block;
-  background: white;
-  color: black;
-  font-size: 1rem;
-  padding: 0.75rem 2.5rem;
-  border: none;
+main.dimmed {
+  filter: brightness(50%);
+  transition: filter 0.3s ease;
+}
+
+/* === LINKS === */
+a {
+  color: var(--color-accent);
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.hero-cta:hover,
-.hero-cta:focus {
-  background-color: black;
-  color: white;
+/* === PARAGRAPHS === */
+p {
+  font-weight: 100;
+  line-height: 1.5;
 }
 
-/* === CATEGORIES GRID === */
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  margin: 1rem 3rem;
-}
-
-.category-card img {
-  width: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* === RESPONSIVE BREAKPOINTS === */
-
-@media (max-width: 1200px) {
-  .hero-text h1 { font-size: 2.5rem; }
-  .hero-text p { font-size: 1.1rem; }
-  .hero-cta { padding: 0.6rem 2rem; }
-}
-
-@media (max-width: 800px) {
-  .hero-text h1 { font-size: 2.2rem; }
-  .hero-text p { font-size: 1rem; }
-  .hero-cta { font-size: 0.95rem; padding: 0.6rem 1.5rem; }
-
-  .categories-grid {
-    grid-template-columns: 1fr;
-    margin: 1rem;
-    justify-items: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-text h1 { font-size: 1.8rem; }
-  .hero-text p { font-size: 0.95rem; }
-  .hero-cta { font-size: 0.85rem; padding: 0.5rem 1.2rem; }
-}
