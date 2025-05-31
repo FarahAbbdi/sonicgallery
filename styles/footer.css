@@ -1,0 +1,26 @@
+/* footer.css */
+
+.site-footer {
+  background-color: var(--color-grey);
+  color: var(--color-black);
+  padding: 2rem 3rem;
+  font-size: 0.95rem;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+.site-footer p {
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.footer-about {
+  margin-bottom: 1rem;
+}
+
+.footer-bottom {
+  font-size: 0.85rem;
+  color: #555; /* Slightly dimmed for a secondary feel */
+}

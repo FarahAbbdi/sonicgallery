@@ -65,7 +65,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   margin: 1rem 3rem;
-  justify-items: center;
 }
 
 .category-card img {
@@ -90,6 +89,7 @@
   .categories-grid {
     grid-template-columns: 1fr;
     margin: 1rem;
+    justify-items: center;
   }
 }
 
