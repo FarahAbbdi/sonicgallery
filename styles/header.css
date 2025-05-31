@@ -1,12 +1,17 @@
 /* header.css */
 
+/* Total header height = callout-bar (40px) + nav-section (80px) = 120px */
+
 /* === CALLOUT BAR === */
 .callout-bar {
+  height: 40px;
   background-color: var(--color-black);
   color: var(--color-white);
   text-align: center;
-  padding: 0.5rem 1rem;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* === NAVIGATION === */
@@ -16,6 +21,7 @@
   align-items: center;
   padding: 1rem 2rem;
   border-bottom: 1px solid #eee;  /* FOR TESTING */
+  height: 80px;
 }
 
 .nav-left,
@@ -42,11 +48,9 @@
 .nav-links li a {
   text-decoration: none;
   color: var(--color-black);
-  font-weight: 600;
   font-size: 1rem;
   transition: color 0.3s ease;
   border-bottom: 3px solid transparent;
-  padding-bottom: 3px;
 }
 
 .nav-links li a:hover,
@@ -84,7 +88,7 @@
 
 .menu-toggle {
   all: unset;
-  display: none; /* Hidden by default */
+  display: none;
   cursor: pointer;
   padding: 0.5rem;
 }

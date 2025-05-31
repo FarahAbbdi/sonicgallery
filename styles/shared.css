@@ -1,7 +1,7 @@
 /* shared.css */
 
 /* Import font */
-@import url('https://fonts.googleapis.com/css2?family=Nobile&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nobile:wght@100..900&display=swap');
 
 /* Root variables for consistent theming */
 :root {
@@ -20,9 +20,9 @@
 }
 
 html, body {
-    font-family: var(--font-main);
-    color: var(--color-black);
-    background-color: var(--color-white);
+  font-family: var(--font-main);
+  color: var(--color-black);
+  background-color: var(--color-white);
 }
 
 /* Links */

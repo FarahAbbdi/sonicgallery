@@ -6,7 +6,7 @@
     <title>Sonic Gallery</title>
     <link rel="stylesheet" href="styles/shared.css">
     <link rel="stylesheet" href="styles/header.css">
-
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <header>
@@ -23,24 +23,21 @@
                     </ul>
                 </nav>
             </div>
-
             <button class="menu-toggle" aria-label="Open Menu">
                 <img src="assets/icons/menu.svg" alt="Menu Icon" />
             </button>
-
             <!-- TODO: FIX FOR PERFORMANCE (ADD WEBP AND PNG VERSION) -->
             <div class="logo">
             <a href="index.html" aria-label="Home">
                 <picture>
                 <!-- WebP TODO: ADD WebP Version -->
-                 <!-- SVG -->
+                <!-- SVG -->
                 <source srcset="assets/icons/logo.svg" type="image/svg+xml" />
                 <!-- PNG TODO: CHANGE TO PNG -->
                 <img src="assets/icons/logo.svg" alt="Sonics Gallery Logo" />
                 </picture>
             </a>
             </div>
-
             <div class="nav-right">
                 <div class="nav-icons">
                     <button aria-label="Open Search" class="icon btn-search">
@@ -51,12 +48,20 @@
                     </button>
                 </div>
             </div>
-        </section>  
-        </nav>
+        </section>
     </header>
     <main>
-        <section class="hero-section"></section>
-        <section class="category-section"></section>
+        <section class="hero">
+            <picture>
+                <!-- WebP TODO: ADD WebPversion -->
+                <img src="assets/ui/hero.jpg" alt="Hero banner" class="hero-image" />
+            </picture>
+            <div class="hero-text">
+                <h1>Discover the Drop</h1>
+                <p>New arrivals available now</p>
+                <a href="pages/shop.html" class="hero-cta">SHOP NOW</a>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-content"></div>
