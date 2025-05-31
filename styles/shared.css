@@ -26,6 +26,16 @@ html, body {
   background-color: var(--color-white);
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 /* Links */
 a {
   color: var(--color-accent);
