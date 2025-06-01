@@ -1,13 +1,14 @@
 import { includeHTML } from "/scripts/include.js";
-import { setupDropdown } from "/scripts/dropdown.js";
+import { setupDropdownMenu, setupSidebarNavigation } from "/scripts/header.js";
 
-// Load components
+// Load reusable components into the DOM
 includeHTML("#site-header", "/components/header.html");
 includeHTML("#site-footer", "/components/footer.html");
 
-// Handle dropdown logic when header is loaded
+// Run logic after header is loaded
 document.addEventListener("htmlIncluded", (e) => {
-    if (e.target.matches("#site-header")) {
-        setupDropdown(); // safely runs only after header is in DOM
-    }
+  if (e.target.matches("#site-header")) {
+    setupDropdownMenu();       // Handles dropdown toggle for "Clothing"
+    setupNavSidebar();   // Handles responsive mobile sidebar
+  }
 });

@@ -1,4 +1,7 @@
-export function setupDropdown() {
+// header.js
+
+// Dropdown toggle for clothing menu
+export function setupDropdownMenu() {
     const toggle = document.querySelector(".dropdown-toggle");
     const dropdownNav = document.querySelector(".dropdown-nav");
     const body = document.body;
@@ -53,4 +56,43 @@ export function setupDropdown() {
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && dropdownNav.classList.contains("open")) closeDropdown();
     });
+}
+
+// Sidebar toggle for mobile / small screens
+export function setupSidebarNavigation() {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const sidebar = document.querySelector(".sidebar-nav");
+  const overlay = document.querySelector(".overlay");
+  const body = document.body;
+
+  if (!menuToggle || !sidebar || !overlay) return;
+
+  function closeSidebar() {
+    sidebar.classList.remove("open");
+    overlay.classList.remove("show");
+    body.classList.remove("body-lock");
+  }
+
+  function openSidebar() {
+    sidebar.classList.add("open");
+    overlay.classList.add("show");
+    body.classList.add("body-lock");
+  }
+
+  menuToggle.addEventListener("click", () => {
+    if (sidebar.classList.contains("open")) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  });
+
+  overlay.addEventListener("click", closeSidebar);
+
+  // Close sidebar if viewport grows larger than 1000px
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1000 && sidebar.classList.contains("open")) {
+      closeSidebar();
+    }
+  });
 }
