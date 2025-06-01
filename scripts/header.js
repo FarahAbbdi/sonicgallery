@@ -1,40 +1,44 @@
 // header.js
 
+// === DROPDOWN MENU LOGIC (Desktop) ===
 export function setupDropdownMenu() {
-    const toggle = document.querySelector(".dropdown-toggle");
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
     const dropdownNav = document.querySelector(".dropdown-nav");
     const overlay = document.querySelector(".overlay");
     const body = document.body;
 
-    if (!toggle || !dropdownNav || !overlay) return;
+    if (!dropdownToggle || !dropdownNav || !overlay) return;
 
+    // Close dropdown and reset states
     function closeDropdown() {
         dropdownNav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", false);
+        dropdownToggle.setAttribute("aria-expanded", "false");
         body.classList.remove("body-lock");
         overlay.classList.remove("show");
     }
 
+    // Show/hide dropdown based on viewport width
     function checkViewport() {
         if (window.innerWidth <= 1000) {
         closeDropdown();
         dropdownNav.style.display = "none";
-        toggle.style.display = "none";
+        dropdownToggle.style.display = "none";
         } else {
         dropdownNav.style.display = "";
-        toggle.style.display = "";
+        dropdownToggle.style.display = "";
         }
     }
 
     checkViewport();
     window.addEventListener("resize", checkViewport);
 
-    toggle.addEventListener("click", (event) => {
-        event.stopPropagation();
+    // Toggle dropdown open/close on click
+    dropdownToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
         if (dropdownNav.style.display === "none") return;
 
         const isOpen = dropdownNav.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", isOpen);
+        dropdownToggle.setAttribute("aria-expanded", isOpen.toString());
 
         if (isOpen) {
         body.classList.add("body-lock");
@@ -44,11 +48,9 @@ export function setupDropdownMenu() {
         }
     });
 
-    // Close dropdown when clicking overlay
+    // Close dropdown when clicking on overlay
     overlay.addEventListener("click", () => {
-        if (dropdownNav.classList.contains("open")) {
-        closeDropdown();
-        }
+        if (dropdownNav.classList.contains("open")) closeDropdown();
     });
 
     // Close dropdown if clicking outside
@@ -56,12 +58,13 @@ export function setupDropdownMenu() {
         if (
         dropdownNav.classList.contains("open") &&
         !dropdownNav.contains(e.target) &&
-        !toggle.contains(e.target)
+        !dropdownToggle.contains(e.target)
         ) {
         closeDropdown();
         }
     });
 
+    // Close dropdown on Escape key
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && dropdownNav.classList.contains("open")) {
         closeDropdown();
@@ -69,7 +72,7 @@ export function setupDropdownMenu() {
     });
 }
 
-// Sidebar toggle for mobile / small screens
+// === SIDEBAR NAVIGATION (Mobile) ===
 export function setupSidebarNavigation() {
     const menuToggle = document.querySelector(".menu-toggle");
     const sidebar = document.querySelector(".sidebar-nav");
@@ -78,18 +81,21 @@ export function setupSidebarNavigation() {
 
     if (!menuToggle || !sidebar || !overlay) return;
 
-    function closeSidebar() {
-        sidebar.classList.remove("open");
-        overlay.classList.remove("show");
-        body.classList.remove("body-lock");
-    }
-
+    // Open sidebar and show overlay
     function openSidebar() {
         sidebar.classList.add("open");
         overlay.classList.add("show");
         body.classList.add("body-lock");
     }
 
+    // Close sidebar and hide overlay
+    function closeSidebar() {
+        sidebar.classList.remove("open");
+        overlay.classList.remove("show");
+        body.classList.remove("body-lock");
+    }
+
+    // Toggle sidebar open/close on menu button click
     menuToggle.addEventListener("click", () => {
         if (sidebar.classList.contains("open")) {
         closeSidebar();
@@ -98,12 +104,28 @@ export function setupSidebarNavigation() {
         }
     });
 
-    overlay.addEventListener("click", closeSidebar);
+    // Close sidebar when clicking overlay
+    overlay.addEventListener("click", () => {
+        if (sidebar.classList.contains("open")) {
+        closeSidebar();
+        }
+    });
 
-    // Close sidebar if viewport grows larger than 1000px
+    // Auto-close sidebar if viewport width exceeds 1000px
     window.addEventListener("resize", () => {
         if (window.innerWidth > 1000 && sidebar.classList.contains("open")) {
         closeSidebar();
         }
     });
+
+    // === Sidebar dropdown toggle for Clothing submenu ===
+    const sidebarDropdownToggle = sidebar.querySelector(".sidebar-dropdown-toggle");
+    const sidebarSubmenu = sidebar.querySelector(".sidebar-submenu");
+
+    if (sidebarDropdownToggle && sidebarSubmenu) {
+        sidebarDropdownToggle.addEventListener("click", () => {
+        const isShown = sidebarSubmenu.classList.toggle("show");
+        sidebarDropdownToggle.setAttribute("aria-expanded", isShown.toString());
+        });
+    }
 }

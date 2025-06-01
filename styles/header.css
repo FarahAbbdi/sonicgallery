@@ -62,7 +62,6 @@
 }
 
 .nav-links li a:hover,
-.nav-links li a:focus,
 .nav-links li button.dropdown-toggle:hover {
   border-bottom-color: var(--color-black); 
 }
@@ -166,10 +165,35 @@
   gap: 1.5rem;
 }
 
-.sidebar-nav-links li a {
+.sidebar-nav-links li a,
+.sidebar-dropdown-toggle {
+  background: none;
+  border: none;
+  text-decoration: none;
   font-size: 1.2rem;
   color: var(--color-black);
   text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.sidebar-nav-links li a:hover,
+.sidebar-dropdown-toggle:hover {
+  border-bottom-color: var(--color-black); 
+}
+
+/* === CATEGORY LINK DROP DOWN (FOR SIDEBAR)  === */
+
+.sidebar-submenu {
+  list-style: none;
+  padding-left: 2rem;
+  margin-top: 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar-submenu.show {
+  display: flex;
 }
 
 /* === OVERLAY === */
@@ -205,11 +229,11 @@
 
 @media (max-width: 500px) {
   .sidebar-nav {
-    max-width: 100%;   /* allow full width */
-    width: 100vw;      /* full viewport width */
-    left: 0;           /* align left */
-    right: auto;       /* remove right positioning */
-    top: 120px;        /* keep below header */
+    max-width: 100%;
+    width: 100vw;
+    left: 0;         
+    right: auto;      
+    top: 120px;        
     height: calc(100% - 120px);
   }
 }
