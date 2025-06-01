@@ -113,8 +113,19 @@ export function setupSidebarNavigation() {
 
     // Auto-close sidebar if viewport width exceeds 1000px
     window.addEventListener("resize", () => {
+        const isSidebarOpen = sidebar.classList.contains("open")
         if (window.innerWidth > 1000 && sidebar.classList.contains("open")) {
         closeSidebar();
+        }
+        // Keep overlay and scroll lock if dropdown OR sidebar is open
+        const isDropdownOpen = document.querySelector(".dropdown-nav")?.classList.contains("open");
+
+        if (isSidebarOpen || isDropdownOpen) {
+            overlay.classList.add("show");
+            body.classList.add("body-lock");
+        } else {
+            overlay.classList.remove("show");
+            body.classList.remove("body-lock");
         }
     });
 
