@@ -2,25 +2,33 @@
   {
     "title": "Sativa Sherpa Pullover - Yellow/Navy",
     "price": "$70.00",
-    "image": "../assets/filler-image.jpg",
+    "image": "../assets/images/jackets/sherpa1.jpg",
+    "image2": "../assets/images/jackets/sherpa2.jpg",
+    "image3": "../assets/images/jackets/sherpa3.jpg",
     "link": "product1.html"
   },
   {
     "title": "Reservoir Jacket - Oil Blue",
     "price": "$150.00",
-    "image": "../assets/filler-image.jpg",
+    "image": "../assets/images/jackets/reservior1.webp",
+    "image2": "../assets/images/jackets/reservior2.webp",
+    "image3": "../assets/images/jackets/reservior3.webp",
     "link": "product2.html"
   },
   {
     "title": "Bull Denim 91 Jacket",
     "price": "$40.00",
-    "image": "../assets/filler-image.jpg",
+    "image": "../assets/images/jackets/bull1.webp",
+    "image2": "../assets/images/jackets/bull2.webp",
+    "image3": "../assets/images/jackets/bull3.webp",
     "link": "product3.html"
   },
   {
     "title": "HUF Set Shell Jacket - Black",
     "price": "$150.00",
-    "image": "../assets/filler-image.jpg",
+    "image": "../assets/images/jackets/shell1.webp",
+    "image2": "../assets/images/jackets/shell2.webp",
+    "image3": "../assets/images/jackets/shell3.webp",
     "link": "product4.html"
   }
 ]

@@ -2,37 +2,49 @@
   {
     "title": "Two Birds T-Shirt - Off White",
     "price": "$64.95",
-    "image": "../assets/filler-image.jpg",
+    "image": "../assets/images/tshirt/twobird1.webp",
+    "image2": "../assets/images/tshirt/twobird2.webp",
+    "image3": "../assets/images/tshirt/twobird3.webp" ,
     "link": "product1.html"
   },
   {
     "title": "Bear Grills - Dark Pine",
     "price": "$64.95",
-    "image": "../assets/filler-image.jpg",
+    "image": "../assets/images/tshirt/beargrill1.webp",
+    "image2": "../assets/images/tshirt/beargrill2.webp",
+    "image3": "../assets/images/tshirt/beargrill3.webp" ,
     "link": "product2.html"
   },
   {
     "title": "Leopard Bar Logo S/S Crop T-Shirt - Black",
     "price": "$40.00",
-    "image": "../assets/filler-image.jpg",
+    "image": "../assets/images/tshirt/leopard1.webp",
+    "image2": "../assets/images/tshirt/leopard2.webp",
+    "image3": "../assets/images/tshirt/leopard3.jpg" ,
     "link": "product3.html"
   },
   {
     "title": "Buenos Airies Boogie T-Shirt - Dusty Scarlet",
     "price": "$64.95",
-    "image": "../assets/filler-image.jpg",
+    "image": "../assets/images/tshirt/buenos1.webp",
+    "image2": "../assets/images/tshirt/buenos2.webp",
+    "image3": "../assets/images/tshirt/buenos3.webp" ,
     "link": "product4.html"
   },
   {
     "title": "Static Soccer Jersey - Forest",
     "price": "$149.00",
-    "image": "../assets/filler-image.jpg",
+    "image": "../assets/images/tshirt/soccer1.webp",
+    "image2": "../assets/images/tshirt/soccer2.webp",
+    "image3": "../assets/images/tshirt/soccer3.webp" ,
     "link": "product5.html"
   },
   {
     "title": "Greyhound Jersey - Sky Blue",
     "price": "$84.95",
-    "image": "../assets/filler-image.jpg",
+    "image": "../assets/images/tshirt/greyhound1.jpg",
+    "image2": "../assets/images/tshirt/greyhound2.jpg",
+    "image3": "../assets/images/tshirt/greyhound3.jpg" ,
     "link": "product6.html"
   }
 ]
