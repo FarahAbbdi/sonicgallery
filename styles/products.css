@@ -1,0 +1,53 @@
+/* product.css */
+
+main {
+  margin: 3rem 10rem 6rem; /* extra space at the bottom */
+}
+
+h3 {
+  margin-top: 0.5rem;
+  font-weight: normal;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+/* === PRODUCT GRID SECTION === */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem 3rem;
+    margin-top: 1rem;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card img {
+    width: 100%;
+    min-height: 100%;           
+    object-fit: cover;
+    margin-bottom: 1rem;
+    transition: filter 0.3s ease; 
+}
+
+.product-card:hover img {
+    filter: brightness(0.85);
+}
+
+.product-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.product-description h2 {
+    font-size: 16px;
+}
+
+.product-description p {
+    font-size: small;
+}

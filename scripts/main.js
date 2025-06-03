@@ -6,6 +6,7 @@ import { setupDropdownMenu, setupSidebarNavigation } from "/scripts/header.js";
 // Load reusable components into the DOM
 includeHTML("#site-header", "/components/header.html");
 includeHTML("#site-footer", "/components/footer.html");
+includeHTML("#product-grid-container", "/components/product-grid.html");
 
 // Run logic after header is loaded
 document.addEventListener("htmlIncluded", (e) => {
