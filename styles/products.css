@@ -40,12 +40,12 @@ h3 {
 .product-description {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     font-size: 1rem;
 }
 
 .product-description h2 {
     font-size: 16px;
+    font-weight: 400;
 }
 
 .product-description p {

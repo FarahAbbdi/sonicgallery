@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Original 874 Mens Work Pants - Lincoln Green",
+    "price": "$100.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product1.html"
+  },
+  {
+    "title": "Loose Fit Double Knee Work Pants - Dark Brown",
+    "price": "$99.99",
+    "image": "../assets/filler-image.jpg",
+    "link": "product2.html"
+  },
+  {
+    "title": "Loose Fit Double Knee Work Pants - Khaki",
+    "price": "$99.99",
+    "image": "../assets/filler-image.jpg",
+    "link": "product3.html"
+  },
+  {
+    "title": "Women Skate Pants - Black",
+    "price": "$70.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product4.html"
+  },
+  {
+    "title": "Dickies X Spitfire Double Knee Pants - Olive Green",
+    "price": "$80.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product5.html"
+  },
+  {
+    "title": "Bull Denim 91 Pants - Mid Blue",
+    "price": "$119.99",
+    "image": "../assets/filler-image.jpg",
+    "link": "product6.html"
+  }
+]

@@ -1,17 +1,27 @@
-// main.js
-
-import { includeHTML } from "/scripts/include.js";
+import { includeHTML, loadProductGrid } from "/scripts/include.js";
 import { setupDropdownMenu, setupSidebarNavigation } from "/scripts/header.js";
 
-// Load reusable components into the DOM
+// Load reusable components
 includeHTML("#site-header", "/components/header.html");
 includeHTML("#site-footer", "/components/footer.html");
 includeHTML("#product-grid-container", "/components/product-grid.html");
 
-// Run logic after header is loaded
+// Determine which JSON to load based on filename
+function getJsonPathFromPage() {
+  const path = window.location.pathname;
+  const filename = path.substring(path.lastIndexOf("/") + 1).replace(".html", "");
+  return `/data/${filename}.json`; // Returns e.g. /data/tshirts.json
+}
+
+// Run logic after components load
 document.addEventListener("htmlIncluded", (e) => {
     if (e.target.matches("#site-header")) {
-        setupDropdownMenu();       // Handles dropdown toggle for "Clothing"
-        setupSidebarNavigation();   // Handles responsive mobile sidebar
+        setupDropdownMenu();
+        setupSidebarNavigation();
+    }
+
+    if (e.target.matches("#product-grid-container")) {
+        const jsonPath = getJsonPathFromPage();
+        loadProductGrid("product-grid-container", jsonPath);
     }
 });

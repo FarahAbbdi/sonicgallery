@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Two Birds T-Shirt - Off White",
+    "price": "$64.95",
+    "image": "../assets/filler-image.jpg",
+    "link": "product1.html"
+  },
+  {
+    "title": "Bear Grills - Dark Pine",
+    "price": "$64.95",
+    "image": "../assets/filler-image.jpg",
+    "link": "product2.html"
+  },
+  {
+    "title": "Leopard Bar Logo S/S Crop T-Shirt - Black",
+    "price": "$40.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product3.html"
+  },
+  {
+    "title": "Buenos Airies Boogie T-Shirt - Dusty Scarlet",
+    "price": "$64.95",
+    "image": "../assets/filler-image.jpg",
+    "link": "product4.html"
+  },
+  {
+    "title": "Static Soccer Jersey - Forest",
+    "price": "$149.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product5.html"
+  },
+  {
+    "title": "Greyhound Jersey - Sky Blue",
+    "price": "$19.99",
+    "image": "../assets/filler-image.jpg",
+    "link": "product6.html"
+  }
+]

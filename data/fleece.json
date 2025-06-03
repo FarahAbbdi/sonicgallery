@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Disorder P/O Hoodie - Black",
+    "price": "$60.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product1.html"
+  },
+  {
+    "title": "Satin College Pullover Hood - Ash Heather",
+    "price": "$60.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product2.html"
+  },
+  {
+    "title": "Network French Terry Crew - Olive",
+    "price": "$60.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product3.html"
+  },
+  {
+    "title": "OG Embroidery Crewneck - Clay",
+    "price": "$50.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product4.html"
+  },
+  {
+    "title": "Seance Zip Hood - Red",
+    "price": "$150.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product5.html"
+  },
+  {
+    "title": "OG Puff Print Pullover - Black",
+    "price": "$50.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product6.html"
+  }
+]

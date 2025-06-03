@@ -1,0 +1,38 @@
+[
+  {
+    "title": "A158WA-1A",
+    "price": "$119.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product1.html"
+  },
+  {
+    "title": "A130WE-7A",
+    "price": "$199.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product2.html"
+  },
+  {
+    "title": "HUF Dice Set Keychain",
+    "price": "$20.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product3.html"
+  },
+  {
+    "title": "HUF X Street Fighter Sake Bomb Set",
+    "price": "$50.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product4.html"
+  },
+  {
+    "title": "Northside Honey Hoops",
+    "price": "$170.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product5.html"
+  },
+  {
+    "title": "CA500WE-4B",
+    "price": "$199.00",
+    "image": "../assets/filler-image.jpg",
+    "link": "product6.html"
+  }
+]
