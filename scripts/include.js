@@ -26,10 +26,15 @@ export async function loadProductGrid(containerId, jsonPath) {
 
         container.innerHTML = products.map(product => `
             <a href="${product.link}" class="product-card">
+                ${product.sale ? '<div class="sale-badge">30% off</div>' : ''} 
                 <img src="${product.image}" alt="${product.title}" />
                 <div class="product-description">
                     <h2>${product.title}</h2>
-                    <p>${product.price}</p>
+                    <p>
+                      ${product.sale && product["old-price"]
+                        ? `<span class="old-price">${product["old-price"]}</span> <span class="new-price">${product.price}</span>`
+                        : `${product.price}`
+                      }
                 </div>
             </a>
         `).join("");

@@ -1,38 +1,48 @@
 [
   {
-    "title": "Two Birds T-Shirt - Off White",
-    "price": "$64.95",
-    "image": "../assets/filler-image.jpg",
-    "link": "product1.html"
+    "title": "HUF X Smashing Pumpkins Vampire T-Shirt - Black",
+    "old-price": "$50.00",
+    "price": "$35.00",
+    "image": "../assets/images/sales/pumpkin3.webp",
+    "image2": "../assets/images/sales/pumpkin2.webp",
+    "image3": "../assets/images/sales/pumpkin1.webp",
+    "link": "product1.html",
+    "sale": true
   },
   {
-    "title": "Bear Grills - Dark Pine",
-    "price": "$64.95",
-    "image": "../assets/filler-image.jpg",
-    "link": "product2.html"
+    "title": "H Star Pullover Hood - Nightshade",
+    "old-price": "$100.00",
+    "price": "$70",
+    "image": "../assets/images/sales/star1.webp",
+    "image2": "../assets/images/sales/star2.webp",
+    "link": "product2.html",
+    "sale": true
   },
   {
-    "title": "Leopard Bar Logo S/S Crop T-Shirt - Black",
-    "price": "$40.00",
-    "image": "../assets/filler-image.jpg",
-    "link": "product3.html"
+    "title": "Swish Pullover Hood - Black",
+    "old-price": "$160.00",
+    "price": "$112.00",
+    "image": "../assets/images/sales/swish1.webp",
+    "image2": "../assets/images/sales/swish2.webp",
+    "image3": "../assets/images/sales/swish3.webp",
+    "link": "product3.html",
+    "sale": true
   },
   {
-    "title": "Buenos Airies Boogie T-Shirt - Dusty Scarlet",
-    "price": "$64.95",
-    "image": "../assets/filler-image.jpg",
-    "link": "product4.html"
+    "title": "Arch Logo Snapback - Cream",
+    "old-price": "$70.00",
+    "price": "$49.00",
+    "image": "../assets/images/sales/snapback.webp",
+    "link": "product4.html",
+    "sale": true
   },
   {
-    "title": "Static Soccer Jersey - Forest",
-    "price": "$149.00",
-    "image": "../assets/filler-image.jpg",
-    "link": "product5.html"
-  },
-  {
-    "title": "Greyhound Jersey - Sky Blue",
-    "price": "$19.99",
-    "image": "../assets/filler-image.jpg",
-    "link": "product6.html"
+    "title": "Rim & Wheel Inc T-Shirt - Hunter Green",
+    "old-price": "$70.00",
+    "price": "$49.00",
+    "image": "../assets/images/sales/green1.webp",
+    "image2": "../assets/images/sales/green2.webp",
+    "link": "product4.html",
+    "sale": true
   }
 ]
