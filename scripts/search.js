@@ -90,16 +90,25 @@ export async function loadSearchData() {
         "tshirts.json"
     ];
 
+    // 🆕For each file, fetch and tag items with category & id
     const fetches = files.map(file =>
-        fetch(`../data/${file}`)  // ⬅️ go up one level from scripts/
-            .then(res => {
-                if (!res.ok) throw new Error(`Failed to load ${file}`);
-                return res.json();
-            })
-            .catch(err => {
-                console.error(err);
-                return [];
-            })
+        fetch(`../data/${file}`)
+        .then(res => {
+            if (!res.ok) throw new Error(`Failed to load ${file}`);
+            return res.json();
+        })
+        .then(dataArray => {
+            const category = file.replace(".json", ""); // 🆕 derive category
+            return dataArray.map((item, index) => ({
+            ...item,
+            category,    // 🆕 attach category
+            id: index    // 🆕 attach index (id)
+            }));
+        })
+        .catch(err => {
+            console.error(err);
+            return []; // return empty array on failure
+        })
     );
 
     const results = await Promise.all(fetches);
@@ -124,12 +133,14 @@ function performSearch(query) {
     });
 
     searchResults.innerHTML = filtered.map(item => `
-        <li tabindex="0" role="option" class="search-result-item">
-            <img src="${item.image}" alt="${item.title}" width="50" height="50" />
-            <div class="search-result-text">
-                <strong>${item.title}</strong><br/>
-                <span>${item.price || ""}</span>
-            </div>
+        <li class="search-result-item">
+            <a href="../pages/product.html?id=${item.id}&category=${item.category}" class="search-result-link">
+                <img src="${item.image}" alt="${item.title}" width="50" height="50" />
+                <div class="search-result-text">
+                    <strong>${item.title}</strong>
+                    <span>${item.price || ""}</span>
+                </div>
+            </a>
         </li>
     `).join("");
 

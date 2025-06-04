@@ -256,6 +256,15 @@
 }
 
 /* === SEARCH RESULTS === */
+.search-result-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 0;
+}
+
 .search-results {
   position: absolute;
   top: 100px; 
@@ -325,7 +334,7 @@
   position: fixed;
   background: rgba(0, 0, 0, 0.3);
   z-index: 5;
-  width: 100vw;     
+  width: 100vw;      
   height: 100vh; 
 }
 
