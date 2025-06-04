@@ -1,3 +1,5 @@
+// main.js
+
 import { includeHTML, loadProductGrid } from "/scripts/include.js";
 import { setupDropdownMenu, setupSidebarNavigation} from "/scripts/header.js";
 import { loadProductDetail } from "/scripts/product-detail.js";

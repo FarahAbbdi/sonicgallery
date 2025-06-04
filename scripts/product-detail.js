@@ -1,4 +1,4 @@
-// scripts/product-detail.js
+// product-detail.js
 
 // Load product detail into the container, using URL params "id" and "category"
 export async function loadProductDetail(containerId = "product-detail-container") {
