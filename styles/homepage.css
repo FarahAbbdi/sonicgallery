@@ -73,6 +73,11 @@
   width: 100%;
   object-fit: cover;
   display: block;
+  transition: filter 0.3s ease; 
+}
+
+.category-card:hover img {
+  filter: brightness(0.70);
 }
 
 /* === RESPONSIVE BREAKPOINTS === */

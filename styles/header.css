@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 1px solid #eee;  /* FOR TESTING */
+  border-bottom: 1px solid var(--color-grey);  
   height: 80px;
 }
 
@@ -57,14 +57,14 @@
   text-decoration: none;
   color: var(--color-black);
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
   border-bottom: 3px solid transparent;
   font-family: var(--font-main);
 }
 
 .nav-links li a:hover,
 .nav-links li button.dropdown-toggle:hover {
-  border-bottom-color: var(--color-black); 
+  border-bottom-color: var(--color-black);
 }
 
 .logo {
@@ -89,12 +89,14 @@
 }
 
 .icon {
-    all: unset; 
-    cursor: pointer;
+  all: unset; 
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* TO DO ADD ICON INTERACTIVE/ANIMATION */
-
+.icon:hover {
+  filter: brightness(0.85);
+}
 
 /* === CATEGORY LINK DROP DOWN  === */
 .dropdown-nav {
@@ -151,7 +153,7 @@
   padding: 2rem;
   box-sizing: border-box;
   transform: translateX(100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease-in-out;
 }
 
 .sidebar-nav.open {
