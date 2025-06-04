@@ -33,10 +33,10 @@
         <div class="nav-right">
         <div class="nav-icons">
             <button aria-label="Open Search" class="icon btn-search">
-            <img src="/assets/icons/search.svg" alt="Search Icon" />
+                <img src="/assets/icons/search.svg" alt="Search Icon" />
             </button>
             <button aria-label="Open Cart" class="icon btn-cart">
-            <img src="/assets/icons/cart.svg" alt="Cart Icon" />
+                <img src="/assets/icons/cart.svg" alt="Cart Icon" />
             </button>
         </div>
         </div>
@@ -71,5 +71,15 @@
     <li><a href="/pages/sale.html">Sale</a></li>
     </ul>
 </nav>
+<!-- Search Bar -->
+<div class="search-wrapper" style="position: relative;">
+    <div class="search-overlay" id="searchOverlay">
+        <form class="search-box" role="search">
+            <input type="search" placeholder="Search…" aria-label="Search" />
+            <button type="button" class="cancel-search">Cancel</button>
+        </form>
+    </div>
+    <ul class="search-results"></ul>
+</div>
 <!-- overlay -->
 <div class="overlay"></div>

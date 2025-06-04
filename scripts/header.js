@@ -20,12 +20,12 @@ export function setupDropdownMenu() {
     // Show/hide dropdown based on viewport width
     function checkViewport() {
         if (window.innerWidth <= 1000) {
-        closeDropdown();
-        dropdownNav.style.display = "none";
-        dropdownToggle.style.display = "none";
+            closeDropdown();
+            dropdownNav.style.display = "none";
+            dropdownToggle.style.display = "none";
         } else {
-        dropdownNav.style.display = "";
-        dropdownToggle.style.display = "";
+            dropdownNav.style.display = "";
+            dropdownToggle.style.display = "";
         }
     }
 
@@ -37,14 +37,25 @@ export function setupDropdownMenu() {
         e.stopPropagation();
         if (dropdownNav.style.display === "none") return;
 
-        const isOpen = dropdownNav.classList.toggle("open");
-        dropdownToggle.setAttribute("aria-expanded", isOpen.toString());
+        const isOpen = dropdownNav.classList.contains("open");
 
         if (isOpen) {
-        body.classList.add("body-lock");
-        overlay.classList.add("show");
+            closeDropdown();
         } else {
-        closeDropdown();
+            // Close search overlay if open before opening dropdown
+            const searchOverlay = document.querySelector(".search-overlay");
+            const searchButton = document.querySelector(".btn-search");
+            if (searchOverlay && searchOverlay.classList.contains("open")) {
+                searchOverlay.classList.remove("open");
+                overlay.classList.remove("show");
+                body.classList.remove("body-lock");
+                if (searchButton) searchButton.setAttribute("aria-expanded", "false");
+            }
+
+            dropdownNav.classList.add("open");
+            dropdownToggle.setAttribute("aria-expanded", "true");
+            body.classList.add("body-lock");
+            overlay.classList.add("show");
         }
     });
 
@@ -56,18 +67,18 @@ export function setupDropdownMenu() {
     // Close dropdown if clicking outside
     document.addEventListener("click", (e) => {
         if (
-        dropdownNav.classList.contains("open") &&
-        !dropdownNav.contains(e.target) &&
-        !dropdownToggle.contains(e.target)
+            dropdownNav.classList.contains("open") &&
+            !dropdownNav.contains(e.target) &&
+            !dropdownToggle.contains(e.target)
         ) {
-        closeDropdown();
+            closeDropdown();
         }
     });
 
     // Close dropdown on Escape key
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && dropdownNav.classList.contains("open")) {
-        closeDropdown();
+            closeDropdown();
         }
     });
 }
