@@ -4,47 +4,41 @@
     "price": "$60.00",
     "image": "../assets/images/fleeces/disorder1.webp",
     "image2": "../assets/images/fleeces/disorder2.webp",
-    "image3": "../assets/images/fleeces/disorder3.webp",
-    "link": "product1.html"
+    "image3": "../assets/images/fleeces/disorder3.webp"
   },
   {
     "title": "Satin College Pullover Hood - Ash Heather",
     "price": "$60.00",
     "image": "../assets/images/fleeces/college1.webp",
     "image2": "../assets/images/fleeces/college2.webp",
-    "image3": "../assets/images/fleeces/college3.webp",
-    "link": "product2.html"
+    "image3": "../assets/images/fleeces/college3.webp"
   },
   {
     "title": "Network French Terry Crew - Olive",
     "price": "$60.00",
     "image": "../assets/images/fleeces/olive1.webp",
     "image2": "../assets/images/fleeces/olive2.webp",
-    "image3": "../assets/images/fleeces/olive3.webp",
-    "link": "product3.html"
+    "image3": "../assets/images/fleeces/olive3.webp"
   },
   {
     "title": "OG Embroidery Crewneck - Clay",
     "price": "$50.00",
     "image": "../assets/images/fleeces/crewneck1.webp",
     "image2": "../assets/images/fleeces/crewneck2.webp",
-    "image3": "../assets/images/fleeces/crewneck3.webp",
-    "link": "product4.html"
+    "image3": "../assets/images/fleeces/crewneck3.webp"
   },
   {
     "title": "Seance Zip Hood - Red",
     "price": "$150.00",
     "image": "../assets/images/fleeces/hoodiered1.webp",
     "image2": "../assets/images/fleeces/hoodiered2.webp",
-    "image3": "../assets/images/fleeces/hoodiered3.webp",
-    "link": "product5.html"
+    "image3": "../assets/images/fleeces/hoodiered3.webp"
   },
   {
     "title": "OG Puff Print Pullover - Black",
     "price": "$50.00",
     "image": "../assets/images/fleeces/puff1.webp",
     "image2": "../assets/images/fleeces/puff2.webp",
-    "image3": "../assets/images/fleeces/puff3.webp",
-    "link": "product6.html"
+    "image3": "../assets/images/fleeces/puff3.webp"
   }
 ]

@@ -2,37 +2,31 @@
   {
     "title": "Tribal Beanie - Orange",
     "price": "$40.00",
-    "image": "../assets/images/headwear/orange1.webp",
-    "link": "product1.html"
+    "image": "../assets/images/headwear/orange1.webp"
   },
   {
     "title": "Tribal Beanie - Navy",
     "price": "$64.95",
-    "image": "../assets/images/headwear/navy1.webp",
-    "link": "product2.html"
+    "image": "../assets/images/headwear/navy1.webp"
   },
   {
     "title": "Huforola Beanie - Black",
     "price": "$40.00",
-    "image": "../assets/images/headwear/huforola1.jpg",
-    "link": "product3.html"
+    "image": "../assets/images/headwear/huforola1.jpg"
   },
   {
     "title": "Huf Set Box Beanie - Biscuit",
     "price": "$40.00",
-    "image": "../assets/images/headwear/huforola1.jpg",
-    "link": "product4.html"
+    "image": "../assets/images/headwear/huforola1.jpg"
   },
   {
     "title": "Essentials Box Logo Beanie - Black",
     "price": "$40.00",
-    "image": "../assets/images/headwear/essentials1.jpg",
-    "link": "product5.html"
+    "image": "../assets/images/headwear/essentials1.jpg"
   },
   {
     "title": "OG Low Beanie - Blue",
     "price": "$39.95",
-    "image": "../assets/images/headwear/blue1.webp",
-    "link": "product6.html"
+    "image": "../assets/images/headwear/blue1.webp"
   }
 ]

@@ -3,45 +3,39 @@
     "title": "A158WA-1A",
     "price": "$119.00",
     "image": "../assets/images/accessories/casio1.webp",
-    "image2": "../assets/images/accessories/casio2.webp",
-    "link": "product1.html"
+    "image2": "../assets/images/accessories/casio2.webp"
   },
   {
     "title": "A130WE-7A",
     "price": "$199.00",
     "image": "../assets/images/accessories/casiovintage1.webp",
     "image2": "../assets/images/accessories/casiovintage2.webp",
-    "image3": "../assets/images/accessories/casiovintage3.webp",
-    "link": "product2.html"
+    "image3": "../assets/images/accessories/casiovintage3.webp"
   },
   {
     "title": "HUF Dice Set Keychain",
     "price": "$20.00",
     "image": "../assets/images/accessories/dice1.webp",
     "image2": "../assets/images/accessories/dice2.webp",
-    "image3": "../assets/images/accessories/dice3.webp",
-    "link": "product3.html"
+    "image3": "../assets/images/accessories/dice3.webp"
   },
   {
     "title": "HUF X Street Fighter Sake Bomb Set",
     "price": "$50.00",
     "image": "../assets/images/accessories/cup3.webp",
     "image2": "../assets/images/accessories/cup2.webp",
-    "image3": "../assets/images/accessories/cup1.webp",
-    "link": "product4.html"
+    "image3": "../assets/images/accessories/cup1.webp"
   },
   {
     "title": "Northside Honey Hoops",
     "price": "$170.00",
     "image": "../assets/images/accessories/hoops1.webp",
-    "image2": "../assets/images/accessories/hoops2.webp",
-    "link": "product5.html"
+    "image2": "../assets/images/accessories/hoops2.webp"
   },
   {
     "title": "CA500WE-4B",
     "price": "$199.00",
     "image": "../assets/images/accessories/casiored1.webp",
-    "image2": "../assets/images/accessories/red2.webp",
-    "link": "product6.html"
+    "image2": "../assets/images/accessories/casiored2.webp"
   }
 ]

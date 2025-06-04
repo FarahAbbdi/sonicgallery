@@ -6,7 +6,6 @@
     "image": "../assets/images/sales/pumpkin3.webp",
     "image2": "../assets/images/sales/pumpkin2.webp",
     "image3": "../assets/images/sales/pumpkin1.webp",
-    "link": "product1.html",
     "sale": true
   },
   {
@@ -14,8 +13,7 @@
     "old-price": "$100.00",
     "price": "$70",
     "image": "../assets/images/sales/star1.webp",
-    "image2": "../assets/images/sales/star2.webp",
-    "link": "product2.html",
+    "image2": "../assets/images/sales/star2.jpeg",
     "sale": true
   },
   {
@@ -25,7 +23,6 @@
     "image": "../assets/images/sales/swish1.webp",
     "image2": "../assets/images/sales/swish2.webp",
     "image3": "../assets/images/sales/swish3.webp",
-    "link": "product3.html",
     "sale": true
   },
   {
@@ -33,7 +30,6 @@
     "old-price": "$70.00",
     "price": "$49.00",
     "image": "../assets/images/sales/snapback.webp",
-    "link": "product4.html",
     "sale": true
   },
   {
@@ -42,7 +38,6 @@
     "price": "$49.00",
     "image": "../assets/images/sales/green1.webp",
     "image2": "../assets/images/sales/green2.webp",
-    "link": "product4.html",
     "sale": true
   }
 ]

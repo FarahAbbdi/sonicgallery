@@ -1,5 +1,6 @@
 import { includeHTML, loadProductGrid } from "/scripts/include.js";
 import { setupDropdownMenu, setupSidebarNavigation } from "/scripts/header.js";
+import { loadProductDetail } from "/scripts/product-detail.js";
 
 // Load reusable components
 includeHTML("#site-header", "/components/header.html");
@@ -20,8 +21,12 @@ document.addEventListener("htmlIncluded", (e) => {
         setupSidebarNavigation();
     }
 
-    if (e.target.matches("#product-grid-container")) {
+    if (document.getElementById("product-grid-container")) {
         const jsonPath = getJsonPathFromPage();
         loadProductGrid("product-grid-container", jsonPath);
+    }
+
+    if (document.getElementById("product-detail-container")) {
+        loadProductDetail();
     }
 });

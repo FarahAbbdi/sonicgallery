@@ -4,47 +4,41 @@
     "price": "$100.00",
     "image": "../assets/images/bottoms/lincoln1.webp",
     "image2": "../assets/images/bottoms/lincoln2.webp",
-    "image3": "../assets/images/bottoms/lincoln3.webp",
-    "link": "product1.html"
+    "image3": "../assets/images/bottoms/lincoln3.webp"
   },
   {
     "title": "Loose Fit Double Knee Work Pants - Dark Brown",
     "price": "$99.99",
     "image": "../assets/images/bottoms/loosefit1.webp",
     "image2": "../assets/images/bottoms/loosefit2.webp",
-    "image3": "../assets/images/bottoms/loosefit3.webp",
-    "link": "product2.html"
+    "image3": "../assets/images/bottoms/loosefit3.webp"
   },
   {
     "title": "Loose Fit Double Knee Work Pants - Khaki",
     "price": "$99.99",
     "image": "../assets/images/bottoms/khaki1.webp",
     "image2": "../assets/images/bottoms/khaki2.webp",
-    "image3": "../assets/images/bottoms/k",
-    "link": "product3.html"
+    "image3": "../assets/images/bottoms/khaki3.webp"
   },
   {
     "title": "Women Skate Pants - Black",
     "price": "$70.00",
     "image": "../assets/images/bottoms/skate1.webp",
     "image2": "../assets/images/bottoms/skate2.webp",
-    "image3": "../assets/images/bottoms/skate3.webp",
-    "link": "product4.html"
+    "image3": "../assets/images/bottoms/skate3.webp"
   },
   {
     "title": "Dickies X Spitfire Double Knee Pants - Olive Green",
     "price": "$80.00",
     "image": "../assets/images/bottoms/spitfire1.webp",
     "image2": "../assets/images/bottoms/spitfire2.webp",
-    "image3": "../assets/images/bottoms/spitfire3.webp",
-    "link": "product5.html"
+    "image3": "../assets/images/bottoms/spitfire3.webp"
   },
   {
     "title": "Bull Denim 91 Pants - Mid Blue",
     "price": "$119.99",
     "image": "../assets/images/bottoms/denim1.webp",
     "image2": "../assets/images/bottoms/denim2.webp",
-    "image3": "../assets/images/bottoms/denim3.webp",
-    "link": "product6.html"
+    "image3": "../assets/images/bottoms/denim3.webp"
   }
 ]

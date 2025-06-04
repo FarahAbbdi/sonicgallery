@@ -4,220 +4,193 @@
     "price": "$64.95",
     "image": "../assets/images/tshirt/twobird1.webp",
     "image2": "../assets/images/tshirt/twobird2.webp",
-    "image3": "../assets/images/tshirt/twobird3.webp" ,
-    "link": "product1.html"
+    "image3": "../assets/images/tshirt/twobird3.webp"
   },
   {
     "title": "Bear Grills - Dark Pine",
     "price": "$64.95",
     "image": "../assets/images/tshirt/beargrill1.webp",
     "image2": "../assets/images/tshirt/beargrill2.webp",
-    "image3": "../assets/images/tshirt/beargrill3.webp" ,
-    "link": "product2.html"
+    "image3": "../assets/images/tshirt/beargrill3.webp"
   },
   {
     "title": "Leopard Bar Logo S/S Crop T-Shirt - Black",
     "price": "$40.00",
     "image": "../assets/images/tshirt/leopard1.webp",
     "image2": "../assets/images/tshirt/leopard2.webp",
-    "image3": "../assets/images/tshirt/leopard3.jpg" ,
-    "link": "product3.html"
+    "image3": "../assets/images/tshirt/leopard3.jpg"
   },
   {
     "title": "Buenos Airies Boogie T-Shirt - Dusty Scarlet",
     "price": "$64.95",
     "image": "../assets/images/tshirt/buenos1.webp",
     "image2": "../assets/images/tshirt/buenos2.webp",
-    "image3": "../assets/images/tshirt/buenos3.webp" ,
-    "link": "product4.html"
+    "image3": "../assets/images/tshirt/buenos3.webp"
   },
   {
     "title": "Static Soccer Jersey - Forest",
     "price": "$149.00",
     "image": "../assets/images/tshirt/soccer1.webp",
     "image2": "../assets/images/tshirt/soccer2.webp",
-    "image3": "../assets/images/tshirt/soccer3.webp" ,
-    "link": "product5.html"
+    "image3": "../assets/images/tshirt/soccer3.webp"
   },
   {
     "title": "Greyhound Jersey - Sky Blue",
     "price": "$84.95",
     "image": "../assets/images/tshirt/greyhound1.jpg",
     "image2": "../assets/images/tshirt/greyhound2.jpg",
-    "image3": "../assets/images/tshirt/greyhound3.jpg" ,
-    "link": "product6.html"
+    "image3": "../assets/images/tshirt/greyhound3.jpg"
   },
   {
     "title": "A158WA-1A",
     "price": "$119.00",
     "image": "../assets/images/accessories/casio1.webp",
-    "image2": "../assets/images/accessories/casio2.webp",
-    "link": "product1.html"
+    "image2": "../assets/images/accessories/casio2.webp"
   },
   {
     "title": "A130WE-7A",
     "price": "$199.00",
     "image": "../assets/images/accessories/casiovintage1.webp",
     "image2": "../assets/images/accessories/casiovintage2.webp",
-    "image3": "../assets/images/accessories/casiovintage3.webp",
-    "link": "product2.html"
+    "image3": "../assets/images/accessories/casiovintage3.webp"
   },
   {
     "title": "HUF Dice Set Keychain",
     "price": "$20.00",
     "image": "../assets/images/accessories/dice1.webp",
     "image2": "../assets/images/accessories/dice2.webp",
-    "image3": "../assets/images/accessories/dice3.webp",
-    "link": "product3.html"
+    "image3": "../assets/images/accessories/dice3.webp"
   },
   {
     "title": "HUF X Street Fighter Sake Bomb Set",
     "price": "$50.00",
     "image": "../assets/images/accessories/cup3.webp",
     "image2": "../assets/images/accessories/cup2.webp",
-    "image3": "../assets/images/accessories/cup1.webp",
-    "link": "product4.html"
+    "image3": "../assets/images/accessories/cup1.webp"
   },
   {
     "title": "Northside Honey Hoops",
     "price": "$170.00",
     "image": "../assets/images/accessories/hoops1.webp",
-    "image2": "../assets/images/accessories/hoops2.webp",
-    "link": "product5.html"
+    "image2": "../assets/images/accessories/hoops2.webp"
   },
   {
     "title": "CA500WE-4B",
     "price": "$199.00",
     "image": "../assets/images/accessories/casiored1.webp",
-    "image2": "../assets/images/accessories/red2.webp",
-    "link": "product6.html"
+    "image2": "../assets/images/accessories/casiored2.webp"
   },
   {
     "title": "Original 874 Mens Work Pants - Lincoln Green",
     "price": "$100.00",
     "image": "../assets/images/bottoms/lincoln1.webp",
     "image2": "../assets/images/bottoms/lincoln2.webp",
-    "image3": "../assets/images/bottoms/lincoln3.webp",
-    "link": "product1.html"
+    "image3": "../assets/images/bottoms/lincoln3.webp"
   },
   {
     "title": "Loose Fit Double Knee Work Pants - Dark Brown",
     "price": "$99.99",
     "image": "../assets/images/bottoms/loosefit1.webp",
     "image2": "../assets/images/bottoms/loosefit2.webp",
-    "image3": "../assets/images/bottoms/loosefit3.webp",
-    "link": "product2.html"
+    "image3": "../assets/images/bottoms/loosefit3.webp"
   },
   {
     "title": "Loose Fit Double Knee Work Pants - Khaki",
     "price": "$99.99",
     "image": "../assets/images/bottoms/khaki1.webp",
     "image2": "../assets/images/bottoms/khaki2.webp",
-    "image3": "../assets/images/bottoms/k",
-    "link": "product3.html"
+    "image3": "../assets/images/bottoms/khaki3.webp"
   },
   {
     "title": "Women Skate Pants - Black",
     "price": "$70.00",
     "image": "../assets/images/bottoms/skate1.webp",
     "image2": "../assets/images/bottoms/skate2.webp",
-    "image3": "../assets/images/bottoms/skate3.webp",
-    "link": "product4.html"
+    "image3": "../assets/images/bottoms/skate3.webp"
   },
   {
     "title": "Dickies X Spitfire Double Knee Pants - Olive Green",
     "price": "$80.00",
     "image": "../assets/images/bottoms/spitfire1.webp",
     "image2": "../assets/images/bottoms/spitfire2.webp",
-    "image3": "../assets/images/bottoms/spitfire3.webp",
-    "link": "product5.html"
+    "image3": "../assets/images/bottoms/spitfire3.webp"
   },
   {
     "title": "Bull Denim 91 Pants - Mid Blue",
     "price": "$119.99",
     "image": "../assets/images/bottoms/denim1.webp",
     "image2": "../assets/images/bottoms/denim2.webp",
-    "image3": "../assets/images/bottoms/denim3.webp",
-    "link": "product6.html"
+    "image3": "../assets/images/bottoms/denim3.webp"
   },
   {
     "title": "Disorder P/O Hoodie - Black",
     "price": "$60.00",
     "image": "../assets/images/fleeces/disorder1.webp",
     "image2": "../assets/images/fleeces/disorder2.webp",
-    "image3": "../assets/images/fleeces/disorder3.webp",
-    "link": "product1.html"
+    "image3": "../assets/images/fleeces/disorder3.webp"
   },
   {
     "title": "Satin College Pullover Hood - Ash Heather",
     "price": "$60.00",
     "image": "../assets/images/fleeces/college1.webp",
     "image2": "../assets/images/fleeces/college2.webp",
-    "image3": "../assets/images/fleeces/college3.webp",
-    "link": "product2.html"
+    "image3": "../assets/images/fleeces/college3.webp"
   },
   {
     "title": "Network French Terry Crew - Olive",
     "price": "$60.00",
     "image": "../assets/images/fleeces/olive1.webp",
     "image2": "../assets/images/fleeces/olive2.webp",
-    "image3": "../assets/images/fleeces/olive3.webp",
-    "link": "product3.html"
+    "image3": "../assets/images/fleeces/olive3.webp"
   },
   {
     "title": "OG Embroidery Crewneck - Clay",
     "price": "$50.00",
     "image": "../assets/images/fleeces/crewneck1.webp",
     "image2": "../assets/images/fleeces/crewneck2.webp",
-    "image3": "../assets/images/fleeces/crewneck3.webp",
-    "link": "product4.html"
+    "image3": "../assets/images/fleeces/crewneck3.webp"
   },
   {
     "title": "Seance Zip Hood - Red",
     "price": "$150.00",
     "image": "../assets/images/fleeces/hoodiered1.webp",
     "image2": "../assets/images/fleeces/hoodiered2.webp",
-    "image3": "../assets/images/fleeces/hoodiered3.webp",
-    "link": "product5.html"
+    "image3": "../assets/images/fleeces/hoodiered3.webp"
   },
   {
     "title": "OG Puff Print Pullover - Black",
     "price": "$50.00",
     "image": "../assets/images/fleeces/puff1.webp",
     "image2": "../assets/images/fleeces/puff2.webp",
-    "image3": "../assets/images/fleeces/puff3.webp",
-    "link": "product6.html"
+    "image3": "../assets/images/fleeces/puff3.webp"
   },
   {
     "title": "Sativa Sherpa Pullover - Yellow/Navy",
     "price": "$70.00",
     "image": "../assets/images/jackets/sherpa1.jpg",
-    "image2": "../assets/images/jackets/sherpa2.jpg",
-    "image3": "../assets/images/jackets/sherpa3.jpg",
-    "link": "product1.html"
+    "image2": "../assets/images/jackets/sherpa2.webp",
+    "image3": "../assets/images/jackets/sherpa3.webp"
   },
   {
     "title": "Reservoir Jacket - Oil Blue",
     "price": "$150.00",
     "image": "../assets/images/jackets/reservior1.webp",
     "image2": "../assets/images/jackets/reservior2.webp",
-    "image3": "../assets/images/jackets/reservior3.webp",
-    "link": "product2.html"
+    "image3": "../assets/images/jackets/reservior3.webp"
   },
   {
     "title": "Bull Denim 91 Jacket",
     "price": "$40.00",
     "image": "../assets/images/jackets/bull1.webp",
     "image2": "../assets/images/jackets/bull2.webp",
-    "image3": "../assets/images/jackets/bull3.webp",
-    "link": "product3.html"
+    "image3": "../assets/images/jackets/bull3.webp"
   },
   {
     "title": "HUF Set Shell Jacket - Black",
     "price": "$150.00",
     "image": "../assets/images/jackets/shell1.webp",
     "image2": "../assets/images/jackets/shell2.webp",
-    "image3": "../assets/images/jackets/shell3.webp",
+    "image3": "../assets/images/jackets/shell3.jpg",
     "link": "product4.html"
   }
 ]
