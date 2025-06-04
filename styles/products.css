@@ -49,6 +49,12 @@ h3 {
     font-weight: 400;
 }
 
+.price-block {
+  margin-left: 5rem; /* Adjust as needed */
+  white-space: nowrap;
+  gap: 0.5rem; 
+}
+
 .old-price {
   text-decoration: line-through;
   color: var(--color-dark-grey);
@@ -69,4 +75,36 @@ h3 {
     padding: 0.5rem 3rem;
     border: 1px solid var(--color-grey);
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* === RESPONSIVE BREAKPOINTS === */
+
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  main {
+    margin: 2rem 3rem 4rem;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    margin: 1rem 1.5rem 3rem;
+  }
+
+  .price-block {
+    margin-left: 1rem;
+  }
+
+  .sale-badge {
+    left: -20px;
+    padding: 0.25rem 1.5rem;
+  }
 }

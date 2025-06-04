@@ -59,6 +59,7 @@
   font-size: 1rem;
   transition: color 0.3s ease;
   border-bottom: 3px solid transparent;
+  font-family: var(--font-main);
 }
 
 .nav-links li a:hover,
@@ -174,6 +175,7 @@
   color: var(--color-black);
   text-decoration: none;
   border-bottom: 2px solid transparent;
+  font-family: var(--font-main);
 }
 
 .sidebar-nav-links li a:hover,

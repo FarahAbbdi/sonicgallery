@@ -30,11 +30,14 @@ export async function loadProductGrid(containerId, jsonPath) {
                 <img src="${product.image}" alt="${product.title}" />
                 <div class="product-description">
                     <h2>${product.title}</h2>
-                    <p>
-                      ${product.sale && product["old-price"]
-                        ? `<span class="old-price">${product["old-price"]}</span> <span class="new-price">${product.price}</span>`
-                        : `${product.price}`
-                      }
+                    <div class="price-block">
+                        <p>
+                            ${product.sale && product["old-price"]
+                            ? `<span class="old-price">${product["old-price"]}</span> <span class="new-price">${product.price}</span>`
+                            : `${product.price}`
+                            }
+                        </p>
+                    </div>
                 </div>
             </a>
         `).join("");
