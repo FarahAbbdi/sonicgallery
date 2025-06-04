@@ -8,6 +8,7 @@
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 50px;
+  min-width: var(--min-width); 
 }
 
 .site-footer p {
@@ -18,4 +19,24 @@
 
 .footer-about {
   margin-bottom: 1rem;
+}
+
+/* === Responsive Breakpoints === */
+
+@media (max-width: 1000px) {
+  .site-footer {
+    padding: 1.5rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 1rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .site-footer p {
+    line-height: 1.4;
+  }
 }

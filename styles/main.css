@@ -16,6 +16,9 @@
   
   /* Fonts */
   --font-main: 'Nobile', sans-serif;
+
+  /* Min Width */
+  --min-width: 320px;
 }
 
 /* === BASE RESET === */
@@ -48,6 +51,7 @@ body {
 /* Main content area grows to fill available space */
 main {
   flex: 1;
+  min-width: var(--min-width);
 }
 
 main.dimmed {

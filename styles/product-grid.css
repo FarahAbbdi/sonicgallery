@@ -13,40 +13,40 @@ h3 {
 
 /* === PRODUCT GRID SECTION === */
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6rem 3rem;
-    margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem 3rem;
+  margin-top: 1rem;
 }
 
 .product-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .product-card img {
-    width: 100%;
-    min-height: 100%;           
-    object-fit: cover;
-    margin-bottom: 1rem;
-    transition: filter 0.3s ease; 
+  width: 100%;
+  min-height: 100%;           
+  object-fit: cover;
+  margin-bottom: 1rem;
+  transition: filter 0.3s ease; 
 }
 
 .product-card:hover img {
-    filter: brightness(0.85);
+  filter: brightness(0.85);
 }
 
 .product-description {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
 }
 
 .product-description h2 {
-    font-size: 16px;
-    font-weight: 400;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .price-block {
@@ -67,14 +67,14 @@ h3 {
 }
 
 .sale-badge {
-    position: absolute;
-    left: -30px;
-    top: 20px;
-    z-index: 1;
-    background-color: var(--color-white);
-    padding: 0.5rem 3rem;
-    border: 1px solid var(--color-grey);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: absolute;
+  left: -30px;
+  top: 20px;
+  z-index: 1;
+  background-color: var(--color-white);
+  padding: 0.5rem 3rem;
+  border: 1px solid var(--color-grey);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 /* === RESPONSIVE BREAKPOINTS === */
