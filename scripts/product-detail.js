@@ -1,5 +1,7 @@
 // product-detail.js
 
+import { addToCart } from "/scripts/cart.js";
+
 // Load product detail into the container, using URL params "id" and "category"
 export async function loadProductDetail(containerId = "product-detail-container") {
   const container = document.getElementById(containerId);
@@ -42,21 +44,16 @@ export async function loadProductDetail(containerId = "product-detail-container"
       </div>
     `;
 
-    setupProductImageSwitching(container);
+    // Add-to-Cart logic after rendering
+    const addToCartBtn = container.querySelector(".add-to-cart");
+    addToCartBtn.addEventListener("click", () => {
+      addToCart(product);
+      document.querySelector(".btn-cart")?.click();
+    });
+    
   } catch (error) {
     console.error(error);
     container.innerHTML = "<p>Failed to load product details.</p>";
   }
-}
 
-// Setup thumbnail click to change main image
-function setupProductImageSwitching(container) {
-  const thumbnails = container.querySelectorAll(".thumbnail-images img");
-  const mainImage = container.querySelector(".product-images .main-image");
-
-  thumbnails.forEach(thumb => {
-    thumb.addEventListener("click", () => {
-      mainImage.src = thumb.src;
-    });
-  });
 }
