@@ -1,6 +1,5 @@
 // header.js
 
-
 // === DROPDOWN MENU LOGIC ===
 export function setupDropdownMenu() {
     const dropdownToggle = document.querySelector(".dropdown-toggle");

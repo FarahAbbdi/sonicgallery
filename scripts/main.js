@@ -4,6 +4,7 @@ import { includeHTML, loadProductGrid } from "/scripts/include.js";
 import { setupDropdownMenu, setupSidebarNavigation} from "/scripts/header.js";
 import { loadProductDetail } from "/scripts/product-detail.js";
 import { setupSearchOverlay, loadSearchData } from "/scripts/search.js";
+import { setupCartSidebar } from "/scripts/cart.js";
 
 // Load reusable components
 includeHTML("#site-header", "/components/header.html");
@@ -22,9 +23,9 @@ document.addEventListener("htmlIncluded", (e) => {
     if (e.target.matches("#site-header")) {
         setupDropdownMenu();
         setupSidebarNavigation();
-        
         loadSearchData();
         setupSearchOverlay();
+        setupCartSidebar();
     }
 
     if (document.getElementById("product-grid-container")) {
