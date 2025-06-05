@@ -1,6 +1,7 @@
 // header.js
 
-// === DROPDOWN MENU LOGIC (Desktop) ===
+
+// === DROPDOWN MENU LOGIC ===
 export function setupDropdownMenu() {
     const dropdownToggle = document.querySelector(".dropdown-toggle");
     const dropdownNav = document.querySelector(".dropdown-nav");
@@ -40,17 +41,11 @@ export function setupDropdownMenu() {
         const isOpen = dropdownNav.classList.contains("open");
 
         if (isOpen) {
+            // Clicking toggle button closes dropdown
             closeDropdown();
         } else {
             // Close search overlay if open before opening dropdown
-            const searchOverlay = document.querySelector(".search-overlay");
-            const searchButton = document.querySelector(".btn-search");
-            if (searchOverlay && searchOverlay.classList.contains("open")) {
-                searchOverlay.classList.remove("open");
-                overlay.classList.remove("show");
-                body.classList.remove("body-lock");
-                if (searchButton) searchButton.setAttribute("aria-expanded", "false");
-            }
+            closeSearchOverlay();
 
             dropdownNav.classList.add("open");
             dropdownToggle.setAttribute("aria-expanded", "true");
@@ -83,7 +78,7 @@ export function setupDropdownMenu() {
     });
 }
 
-// === SIDEBAR NAVIGATION (Mobile) ===
+// === SIDEBAR NAVIGATION ===
 export function setupSidebarNavigation() {
     const menuToggle = document.querySelector(".menu-toggle");
     const sidebar = document.querySelector(".sidebar-nav");
@@ -91,9 +86,12 @@ export function setupSidebarNavigation() {
     const body = document.body;
 
     if (!menuToggle || !sidebar || !overlay) return;
-
+    
     // Open sidebar and show overlay
     function openSidebar() {
+        // Close search overlay if it is currently open
+        closeSearchOverlay();
+
         sidebar.classList.add("open");
         overlay.classList.add("show");
         body.classList.add("body-lock");
@@ -140,7 +138,7 @@ export function setupSidebarNavigation() {
         }
     });
 
-    // === Sidebar dropdown toggle for Clothing submenu ===
+    // Sidebar dropdown toggle for Clothing submenu 
     const sidebarDropdownToggle = sidebar.querySelector(".sidebar-dropdown-toggle");
     const sidebarSubmenu = sidebar.querySelector(".sidebar-submenu");
 
@@ -150,4 +148,23 @@ export function setupSidebarNavigation() {
         sidebarDropdownToggle.setAttribute("aria-expanded", isShown.toString());
         });
     }
+}
+
+// === SHARED HELPER FUNCTIONS ===
+
+// Helper to close the search overlay
+function closeSearchOverlay() {
+    const searchOverlay = document.querySelector(".search-overlay");
+    const overlay       = document.querySelector(".overlay");
+    const body          = document.body;
+    const searchInput   = document.querySelector(".search-overlay input[type='search']");
+    const searchResults = document.querySelector(".search-results");
+
+    if (!searchOverlay || !overlay || !body || !searchInput || !searchResults) return;
+
+    searchOverlay.classList.remove("open");
+    overlay.classList.remove("show");
+    body.classList.remove("body-lock");
+    searchInput.value = "";
+    searchResults.innerHTML = "";
 }

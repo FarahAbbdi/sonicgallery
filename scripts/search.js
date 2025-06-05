@@ -27,12 +27,31 @@ export function setupSearchOverlay() {
         searchResults.innerHTML = "";
     }
 
+    // Helper to close sidebar if its open
+    function closeSidebarIfOpen() {
+        const sidebar = document.querySelector(".sidebar-nav");
+        if (sidebar?.classList.contains("open")) {
+            sidebar.classList.remove("open");
+            // We do NOT remove overlay/body-lock here, since search will re-add them below
+        }
+    }
+
     // Toggle open/close on icon click
     searchButton.addEventListener("click", () => {
         const isOpen = searchOverlay.classList.toggle("open");
         searchButton.setAttribute("aria-expanded", isOpen.toString());
 
         if (isOpen) {
+
+            closeSidebarIfOpen();
+
+            const dropdownNav = document.querySelector(".dropdown-nav");
+            const dropdownToggle = document.querySelector(".dropdown-toggle");
+            if (dropdownNav?.classList.contains("open")) {
+                // Keep the overlay but remove the dropdown nav
+                dropdownNav.classList.remove("open");
+                dropdownToggle?.setAttribute("aria-expanded", "false");
+            }
             overlay.classList.add("show");
             body.classList.add("body-lock");
         } else {
@@ -90,7 +109,7 @@ export async function loadSearchData() {
         "tshirts.json"
     ];
 
-    // 🆕For each file, fetch and tag items with category & id
+    // For each file, fetch and tag items with category & id
     const fetches = files.map(file =>
         fetch(`../data/${file}`)
         .then(res => {
@@ -98,11 +117,11 @@ export async function loadSearchData() {
             return res.json();
         })
         .then(dataArray => {
-            const category = file.replace(".json", ""); // 🆕 derive category
+            const category = file.replace(".json", ""); // derive category
             return dataArray.map((item, index) => ({
             ...item,
-            category,    // 🆕 attach category
-            id: index    // 🆕 attach index (id)
+            category,    // attach category
+            id: index    // attach index (id)
             }));
         })
         .catch(err => {
