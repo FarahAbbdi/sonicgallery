@@ -9,10 +9,19 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-red: #d32f2f;
-
+  --color-dark-grey: #999999;
+  --color-blue: #007bff;
+  --color-blue-dark: #0056b3;
+  --color-purple: #5a31f4;
+  --color-paypal: #ffc439;
+  --color-paypal-text: #003087;
+  --color-affirm: #000000;
+  --color-background: #fafafa;
+  
   /* Greys */
   --color-dark-grey: #999;
   --color-grey: #f0f0f0;
+  --color-light-grey: #e1e5e9;
   
   /* Fonts */
   --font-main: 'Nobile', sans-serif;

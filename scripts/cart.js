@@ -8,6 +8,7 @@ export function setupCartSidebar() {
     const cartSidebar = document.querySelector(".cart-sidebar");
     const closeBtn = document.querySelector(".close-cart-btn");
     const overlay = document.querySelector(".cart-overlay");
+    const checkoutBtn = document.querySelector(".checkout-btn");
     const body = document.body;
 
     if (!cartBtn || !cartSidebar || !closeBtn || !overlay) return;
@@ -43,6 +44,10 @@ export function setupCartSidebar() {
         if (e.key === "Escape" && cartSidebar.classList.contains("open")) {
         closeCart();
         }
+    });
+
+    checkoutBtn.addEventListener("click", () => {
+        window.location.href = '../pages/checkout.html';
     });
 
     // Initial render in case cart is already populated
