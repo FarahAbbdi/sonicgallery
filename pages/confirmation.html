@@ -7,11 +7,35 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/confirmation.css">
 </head>
 <body>
     <div id="site-header"></div>
+    
     <main>
+        <div class="confirmation-container">
+            <div class="success-icon"></div>
+            
+            <h1>Order Confirmed!</h1>
+            <p class="subtitle">Thanks for shopping with us. Your order is on its way.</p>
+            
+            <div class="order-details">
+                <div class="order-number">Order #SG-2025-001847</div>
+                <div class="order-email">Confirmation sent to your email</div>
+            </div>
+            
+            <div class="email-signup">
+                <h3>Stay in the Loop</h3>
+                <p>Get exclusive drops, early access, and street culture updates delivered to your inbox.</p>
+                
+                <form class="email-form" onsubmit="handleSignup(event)">
+                    <input type="email" class="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="signup-btn">Join the Crew</button>
+                </form>
+            </div>
+        </div>
     </main>
+    
     <div id="site-footer"></div>
 
     <script type="module" src="/scripts/main.js"></script>

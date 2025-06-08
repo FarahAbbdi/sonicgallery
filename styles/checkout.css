@@ -1,5 +1,9 @@
 /* checkout-page.css */
 
+main {
+    font-family: var(--font-secondary);
+}
+
 /* === CHECKOUT HEADER === */
 .checkout-header {
   display: flex;
@@ -44,8 +48,8 @@
 }
 
 .express-checkout h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 1.25rem;
   color: var(--color-black);
 }
@@ -67,7 +71,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.875rem;
   min-height: 3.125rem;
 }
@@ -136,7 +140,7 @@
 
 .section h4 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1.25rem;
   color: var(--color-black);
 }
@@ -191,7 +195,7 @@
 
 .checkout-payment h2 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--color-black);
 }
@@ -238,7 +242,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .circle {
@@ -311,7 +315,7 @@
   border: none;
   border-radius: 0.5rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.2s;
   margin-bottom: 1rem;
@@ -394,7 +398,7 @@
 }
 
 .item-price {
-  font-weight: 500;
+  font-weight: 700;
   color: var(--color-black);
 }
 
@@ -420,7 +424,7 @@
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .apply-btn:hover {
@@ -440,7 +444,7 @@
 
 .total-row.final {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 0.75rem;
   padding-top: 0.75rem;
   border-top: 1px solid var(--color-light-grey);

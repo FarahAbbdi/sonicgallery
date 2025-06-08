@@ -25,6 +25,7 @@
   
   /* Fonts */
   --font-main: 'Nobile', sans-serif;
+  --font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;;
 
   /* Min Width */
   --min-width: 320px;
