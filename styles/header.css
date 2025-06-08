@@ -451,9 +451,40 @@
 }
 
 .cart-item-info p + p {
-  font-weight: 600;
+  font-weight: 500;
 }
 
+.quantity-info {
+  margin: 8px 0;
+}
+
+.quantity-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.quantity-btn {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--color-dark-grey);
+  background: var(--color-white);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-btn:hover {
+  background: var(--color-grey);
+}
+
+.quantity-btn:active {
+  background: var(--color-dark-grey);
+}
 
 
 .remove-item-btn {

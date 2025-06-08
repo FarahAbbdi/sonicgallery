@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/checkout-page.css">
 </head>
-<body>
+<body class="checkout-page">
     <header class="checkout-header">
          <!-- Site logo -->
         <div class="checkout-logo">
@@ -52,7 +52,7 @@
         </div>
 
         <!-- Contact Info Form -->
-        <form action="">
+        <form action="confirmation.html">
             <div class="section">
                 <h4>Contact</h4>
                 <input type="text" placeholder="Email or mobile phone number" />
@@ -80,7 +80,7 @@
         </div>
 
         <!-- Payment -->
-            <section class="checkout-payment">
+        <section class="checkout-payment">
             <h2>Payment</h2>
             <p class="secure-note">All transactions are secure and encrypted.</p>
 
@@ -136,56 +136,34 @@
     </section>
 
     <section class="checkout-right">
-        <div class="order-item">
-                <div class="item-image">
-                    <div class="item-badge">1</div>
-                    👕
-                </div>
-                <div class="item-details">
-                    <div class="item-name">Filler</div>
-                    <div class="item-variant">XS</div>
-                </div>
-                <div class="item-price">$50.00</div>
-            </div>
+        <div class="order-items"></div>
 
-            <div class="order-item">
-                <div class="item-image art-preview">
-                    <div class="item-badge">1</div>
-                </div>
-                <div class="item-details">
-                    <div class="item-name">ORANGE TEAR, 2024</div>
-                </div>
-                <div class="item-price">$1,400.00</div>
+        <div class="discount-section">
+            <div class="discount-input">
+                <input type="text" placeholder="Discount code or gift card">
+                <button class="apply-btn">Apply</button>
             </div>
+        </div>
 
-            <div class="discount-section">
-                <div class="discount-input">
-                    <input type="text" placeholder="Discount code or gift card">
-                    <button class="apply-btn">Apply</button>
+        <div class="order-totals">
+            <div class="total-row">
+                <span>Subtotal</span>
+                <span class="checkout-subtotal"></span>
+            </div>
+            <div class="total-row">
+                <span>Shipping</span>
+                <a class="shipping-link">Enter shipping address</a>
+            </div>
+            <div class="total-row final">
+                <span>Total</span>
+                <div style="text-align: right;">
+                    <div style="font-size: 14px; color: #666; font-weight: normal;">AUD</div>
+                    <div class="checkout-order-total">$0.00</div>
                 </div>
             </div>
-
-            <div class="order-totals">
-                <div class="total-row">
-                    <span>Subtotal • 2 items</span>
-                    <span>$1,450.00</span>
-                </div>
-                <div class="total-row">
-                    <span>Shipping</span>
-                    <a href="#" class="shipping-link">Enter shipping address</a>
-                </div>
-                <div class="total-row final">
-                    <span>Total</span>
-                    <div style="text-align: right;">
-                        <div style="font-size: 14px; color: #666; font-weight: normal;">AUD</div>
-                        <div>$1,450.00</div>
-                    </div>
-                </div>
-                <div class="taxes-note">Including $131.82 in taxes</div>
-            </div>
-        </section>
+            <div class="taxes-note"></div>
+        </div>
     </section>
-
     </main>
     <script type="module" src="/scripts/main.js"></script>
 </body>

@@ -33,7 +33,7 @@ export function setupCartSidebar() {
 
         openCart();
     });
-
+    
     closeBtn.addEventListener("click", closeCart);
 
     overlay.addEventListener("click", () => {
@@ -56,7 +56,19 @@ export function setupCartSidebar() {
 
 // Adds product to cart, updates localStorage and re-renders UI
 export function addToCart(product) {
-    cartItems.push(product);
+    // More robust duplicate checking
+    const existingItem = cartItems.find(item => 
+        item.title?.trim().toLowerCase() === product.title?.trim().toLowerCase()
+    );
+
+    if (existingItem) {
+        existingItem.quantity = (existingItem.quantity || 1) + 1;
+    } else {
+        // Create a copy to avoid reference issues
+        const newProduct = { ...product, quantity: 1 };
+        cartItems.push(newProduct);
+    }
+
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     renderCartItems();
 }
@@ -74,6 +86,8 @@ function renderCartItems() {
     let totalPrice = 0;
 
     cartItems.forEach((item, index) => {
+        const quantity = item.quantity || 1;
+
         const itemHTML = `
             <div class="cart-item" data-index="${index}">
                 <div class="cart-content">
@@ -81,6 +95,11 @@ function renderCartItems() {
                     <div class="cart-item-info">
                         <p>${item.title}</p>
                         <p>${item.price}</p>
+                        <p>Quantity: ${quantity}</p>
+                        <div class="quantity-controls">
+                        <button class="quantity-btn decrease" data-index="${index}">-</button>
+                        <button class="quantity-btn increase" data-index="${index}">+</button>
+                    </div>
                     </div>
                 </div>
                 <button class="remove-item-btn" aria-label="Remove">
@@ -110,16 +129,113 @@ function renderCartItems() {
     }
 
     // Attach event listeners to all remove buttons
+    attachCartEventListeners();
+}
+
+function attachCartEventListeners() {
+    const cartItemsContainer = document.querySelector(".cart-items");
+    if (!cartItemsContainer) return;
+
+    // Remove item buttons
     cartItemsContainer.querySelectorAll(".remove-item-btn").forEach(button => {
         button.addEventListener("click", (e) => {
             const itemIndex = e.target.closest(".cart-item").dataset.index;
             removeCartItem(parseInt(itemIndex));
         });
     });
+
+    // Quantity increase buttons
+    cartItemsContainer.querySelectorAll(".quantity-btn.increase").forEach(button => {
+        button.addEventListener("click", (e) => {
+            const itemIndex = parseInt(e.target.dataset.index);
+            increaseQuantity(itemIndex);
+        });
+    });
+
+    // Quantity decrease buttons
+    cartItemsContainer.querySelectorAll(".quantity-btn.decrease").forEach(button => {
+        button.addEventListener("click", (e) => {
+            const itemIndex = parseInt(e.target.dataset.index);
+            decreaseQuantity(itemIndex);
+        });
+    });
+}
+
+// Increase item quantity
+function increaseQuantity(index) {
+    if (cartItems[index]) {
+        cartItems[index].quantity = (cartItems[index].quantity || 1) + 1;
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        renderCartItems();
+    }
+}
+
+// Decrease item quantity
+function decreaseQuantity(index) {
+    if (cartItems[index]) {
+        if (cartItems[index].quantity > 1) {
+            cartItems[index].quantity -= 1;
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            renderCartItems();
+        } else {
+            // If quantity is 1, remove item entirely
+            removeCartItem(index);
+        }
+    }
 }
 
 function removeCartItem(index) {
     cartItems.splice(index, 1); // Remove item from array
     localStorage.setItem("cartItems", JSON.stringify(cartItems)); // Update storage
     renderCartItems(); // Re-render
+}
+
+// Function to print cart items to checkout page
+export function renderCheckoutItems() {
+    const checkoutOrderContainer = document.querySelector(".order-items");
+    const checkoutSubtotal = document.querySelector(".checkout-subtotal");
+    const checkoutOrderTotal = document.querySelector(".checkout-order-total");
+    const taxesNote = document.querySelector(".taxes-note");
+
+    if (!checkoutOrderContainer) return;
+
+    checkoutOrderContainer.innerHTML = ""; // Clear existing content
+
+    let totalPrice = 0;
+
+    cartItems.forEach((item) => {
+        const quantity = item.quantity || 1;
+
+        const itemHTML = `
+        <div class="order-item">
+            <div class="item-image">
+            <img src="${item.image}" alt="${item.title}" style="width: 60px;" />
+            <div class="item-badge">${quantity}</div>
+            </div>
+            <div class="item-details">
+            <div class="item-name">${item.title}</div>
+            </div>
+            <div class="item-price">${item.price}</div>
+        </div>
+        `;
+        checkoutOrderContainer.insertAdjacentHTML("beforeend", itemHTML);
+
+        // Extract numeric value from price
+        const price = parseFloat(item.price.replace(/[^0-9.]/g, ""));
+        totalPrice += isNaN(price) ? 0 : price;
+
+    });
+
+    if (checkoutSubtotal) {
+        checkoutSubtotal.textContent = `$${totalPrice.toFixed(2)}`;
+    }
+
+    if (checkoutOrderTotal) {
+        checkoutOrderTotal.textContent = `$${totalPrice.toFixed(2)}`;
+    }
+
+    if (taxesNote) {
+        const tax = totalPrice * 0.1;
+        taxesNote.textContent = `Including $${tax.toFixed(2)} in taxes`;
+    }
 }

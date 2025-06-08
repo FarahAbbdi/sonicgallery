@@ -4,7 +4,7 @@ import { includeHTML, loadProductGrid } from "/scripts/include.js";
 import { setupDropdownMenu, setupSidebarNavigation} from "/scripts/header.js";
 import { loadProductDetail } from "/scripts/product-detail.js";
 import { setupSearchOverlay, loadSearchData } from "/scripts/search.js";
-import { setupCartSidebar } from "/scripts/cart.js";
+import { setupCartSidebar, renderCheckoutItems} from "/scripts/cart.js";
 
 // Load reusable components
 includeHTML("#site-header", "/components/header.html");
@@ -37,3 +37,9 @@ document.addEventListener("htmlIncluded", (e) => {
         loadProductDetail();
     }
 });
+
+// At the very end of main.js, after all the includeHTML calls
+document.addEventListener('DOMContentLoaded', () => {
+    renderCheckoutItems();
+});
+

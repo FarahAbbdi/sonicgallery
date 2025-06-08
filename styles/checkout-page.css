@@ -385,7 +385,6 @@
 }
 
 .item-name {
-  font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
@@ -395,7 +394,7 @@
 }
 
 .item-price {
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-black);
 }
 
@@ -467,7 +466,7 @@
   border-radius: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .checkout-wrapper {
     grid-template-columns: 1fr;
     gap: 2.5rem;
