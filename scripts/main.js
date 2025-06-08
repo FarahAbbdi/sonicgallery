@@ -4,7 +4,7 @@ import { includeHTML, loadProductGrid } from "/scripts/include.js";
 import { setupDropdownMenu, setupSidebarNavigation} from "/scripts/header.js";
 import { loadProductDetail } from "/scripts/product-detail.js";
 import { setupSearchOverlay, loadSearchData } from "/scripts/search.js";
-import { setupCartSidebar, renderCheckoutItems} from "/scripts/cart.js";
+import { setupCartSidebar, renderCheckoutItems, clearCart} from "/scripts/cart.js";
 
 // Load reusable components
 includeHTML("#site-header", "/components/header.html");
@@ -43,3 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCheckoutItems();
 });
 
+const confirmOrderBtn = document.querySelector(".pay-button");
+
+confirmOrderBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    clearCart(); // Clear both memory and localStorage
+
+    renderCheckoutItems();  // Refresh checkout UI
+    
+    window.location.href = "../pages/confirmation.html";
+});

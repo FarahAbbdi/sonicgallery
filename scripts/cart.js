@@ -47,11 +47,18 @@ export function setupCartSidebar() {
     });
 
     checkoutBtn.addEventListener("click", () => {
-        window.location.href = '../pages/checkout.html';
+        if (cartItems.length > 0) window.location.href = '../pages/checkout.html';
     });
 
     // Initial render in case cart is already populated
     renderCartItems();
+}
+
+// Clears the cart completely
+export function clearCart() {
+    cartItems = []; // Clear in-memory array
+    localStorage.removeItem("cartItems"); // Remove from localStorage
+    renderCartItems(); // Update UI
 }
 
 // Adds product to cart, updates localStorage and re-renders UI
@@ -239,3 +246,5 @@ export function renderCheckoutItems() {
         taxesNote.textContent = `Including $${tax.toFixed(2)} in taxes`;
     }
 }
+
+console.log(cartItems);
