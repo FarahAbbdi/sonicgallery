@@ -1,6 +1,8 @@
 /* header.css */
 
+/* === HEADER DIMENSIONS === */
 /* Total header height = callout-bar (40px) + nav-section (80px) = 120px */
+
 
 /* === CALLOUT BAR === */
 .callout-bar {
@@ -15,8 +17,7 @@
   min-width: var(--min-width); 
 }
 
-/* === NAVIGATION === */
-
+/* === NAVIGATION SECTION === */
 .nav-section {
   display: flex;
   align-items: center;
@@ -41,6 +42,8 @@
   justify-content: flex-end;
 }
 
+
+/* === NAV LINKS === */
 .nav-links {
   list-style: none;
   display: flex;
@@ -69,6 +72,8 @@
   border-bottom-color: var(--color-black);
 }
 
+
+/* === LOGO === */
 .logo {
   position: absolute;
   left: 50%;
@@ -85,6 +90,7 @@
   display: block;
 }
 
+/* === NAV ICONS === */
 .nav-icons {
   display: flex;
   gap: 0.5rem;
@@ -101,7 +107,7 @@
   filter: brightness(0.85);
 }
 
-/* === CATEGORY LINK DROP DOWN  === */
+/* === CATEGORY DROPDOWN NAV (TOP NAV) === */
 .dropdown-nav {
   display: none;   
   width: 100%;   
@@ -133,7 +139,7 @@
   text-decoration: underline;
 }
 
-/* === MENU TOGGLE (Hamburger) === */
+/* === MENU TOGGLE (HAMBURGER) === */
 .menu-toggle {
   display: none;
   background: none;
@@ -179,7 +185,6 @@
   text-decoration: none;
   font-size: 1.2rem;
   color: var(--color-black);
-  text-decoration: none;
   border-bottom: 2px solid transparent;
   font-family: var(--font-main);
 }
@@ -189,8 +194,7 @@
   border-bottom-color: var(--color-black); 
 }
 
-/* === CATEGORY LINK DROP DOWN (FOR SIDEBAR)  === */
-
+/* === SIDEBAR SUBMENU === */
 .sidebar-submenu {
   list-style: none;
   padding-left: 2rem;
@@ -400,6 +404,7 @@
   align-items: center;
   width: 100%;
 }
+
 .checkout-btn {
   all: unset;
   text-align: center;
@@ -486,7 +491,6 @@
   background: var(--color-dark-grey);
 }
 
-
 .remove-item-btn {
   background: transparent;
   border: none;
@@ -500,7 +504,7 @@
   color: var(--color-dark-grey); 
 }
 
-/* === OVERLAY === */
+/* === BACKGROUND OVERLAY === */
 .overlay {
   display: none;
   position: fixed;
@@ -516,7 +520,8 @@
 }
 
 /* === RESPONSIVE BREAKPOINTS === */
-@media (max-width: 1000px) {
+
+@media (max-width: 1200px) {
   .nav-left {
     display: none;
   }

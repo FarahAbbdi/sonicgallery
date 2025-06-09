@@ -1,8 +1,10 @@
-// product-detail.js
-
 import { addToCart } from "/scripts/cart.js";
 
-// Load product detail into the container, using URL params "id" and "category"
+/**
+ * Loads product detail into the specified container based on URL parameters.
+ * 
+ * @param {string} [containerId="product-detail-container"] - The ID of the container to load the product detail into.
+ */
 export async function loadProductDetail(containerId = "product-detail-container") {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -32,9 +34,9 @@ export async function loadProductDetail(containerId = "product-detail-container"
         <div class="product-images">
           <div class="thumbnail-images">
             <img src="${product.image}" alt="${product.title}" />
-              ${product.image2 ? `<img src="${product.image2}" alt="${product.title} alternate 1" />` : ""}
-              ${product.image3 ? `<img src="${product.image3}" alt="${product.title} alternate 2" />` : ""}
-           </div>
+            ${product.image2 ? `<img src="${product.image2}" alt="${product.title} alternate 1" />` : ""}
+            ${product.image3 ? `<img src="${product.image3}" alt="${product.title} alternate 2" />` : ""}
+          </div>
         </div>
         <div class="product-info">
           <h1>${product.title}</h1>
@@ -44,16 +46,15 @@ export async function loadProductDetail(containerId = "product-detail-container"
       </div>
     `;
 
-    // Add-to-Cart logic after rendering
+    // Add product to cart when "ADD TO BAG" button is clicked
     const addToCartBtn = container.querySelector(".add-to-cart");
     addToCartBtn.addEventListener("click", () => {
       addToCart(product);
       document.querySelector(".btn-cart")?.click();
     });
-    
+
   } catch (error) {
     console.error(error);
     container.innerHTML = "<p>Failed to load product details.</p>";
   }
-
 }

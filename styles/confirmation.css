@@ -1,4 +1,4 @@
-/* confirmation.css */
+/* === GLOBAL STYLES === */
 
 main {
     font-family: var(--font-secondary);
@@ -9,16 +9,20 @@ main {
     background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
 }
 
+/* === CONFIRMATION CONTAINER === */
+
 .confirmation-container {
     max-width: 800px;
     width: 100%;
-    text-align: center;    
+    text-align: center;
     border-radius: 24px;
     padding: 3rem;
     position: relative;
     overflow: hidden;
     animation: slideUp 0.8s ease-out;
 }
+
+/* === SUCCESS ICON === */
 
 .success-icon {
     width: 80px;
@@ -39,6 +43,8 @@ main {
     font-weight: bold;
 }
 
+/* === HEADINGS === */
+
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -55,6 +61,8 @@ h1 {
     margin-bottom: 2rem;
     animation: fadeIn 0.8s ease-out 0.5s both;
 }
+
+/* === ORDER DETAILS === */
 
 .order-details {
     display: flex;
@@ -75,6 +83,8 @@ h1 {
     color: var(--color-dark-grey);
     font-size: 0.95rem;
 }
+
+/* === EMAIL SIGNUP === */
 
 .email-signup {
     border-radius: 10px;
@@ -102,6 +112,8 @@ h1 {
     margin: 0 auto;
 }
 
+/* === EMAIL INPUT === */
+
 .email-input {
     flex: 1;
     padding: 1rem 1.25rem;
@@ -122,6 +134,8 @@ h1 {
     border-color: var(--color-blue);
     box-shadow: 0 0 0 0.1875rem rgba(0, 123, 255, 0.1);
 }
+
+/* === SIGNUP BUTTON === */
 
 .signup-btn {
     padding: 1rem 2rem;
@@ -144,6 +158,8 @@ h1 {
 .signup-btn:active {
     transform: translateY(0);
 }
+
+/* === ANIMATIONS === */
 
 @keyframes slideUp {
     from {
@@ -180,6 +196,8 @@ h1 {
         opacity: 1;
     }
 }
+
+/* === RESPONSIVE BREAKPOINTS === */
 
 @media (max-width: 768px) {
     .confirmation-container {

@@ -1,8 +1,9 @@
-// cart.js
-
-// Load from localStorage if available, or initialize empty array
+// Load cart items from localStorage or initialize as empty array
 let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+/**
+ * Initialize and set up cart sidebar functionality and event listeners.
+ */
 export function setupCartSidebar() {
     const cartBtn = document.querySelector(".btn-cart");
     const cartSidebar = document.querySelector(".cart-sidebar");
@@ -26,6 +27,7 @@ export function setupCartSidebar() {
     }
 
     cartBtn.addEventListener("click", () => {
+        // Close other overlays if open
         document.querySelector(".search-overlay")?.classList.remove("open");
         document.querySelector(".dropdown-nav")?.classList.remove("open");
         document.querySelector(".sidebar-nav")?.classList.remove("open");
@@ -33,7 +35,7 @@ export function setupCartSidebar() {
 
         openCart();
     });
-    
+
     closeBtn.addEventListener("click", closeCart);
 
     overlay.addEventListener("click", () => {
@@ -46,41 +48,55 @@ export function setupCartSidebar() {
         }
     });
 
-    checkoutBtn.addEventListener("click", () => {
-        if (cartItems.length > 0) window.location.href = '../pages/checkout.html';
+    checkoutBtn?.addEventListener("click", () => {
+        if (cartItems.length > 0) {
+        window.location.href = "../pages/checkout.html";
+        }
     });
 
-    // Initial render in case cart is already populated
+    // Initial render if cart already has items
     renderCartItems();
 }
 
-// Clears the cart completely
+/**
+ * Clears all items from the cart.
+ */
 export function clearCart() {
-    cartItems = []; // Clear in-memory array
-    localStorage.removeItem("cartItems"); // Remove from localStorage
-    renderCartItems(); // Update UI
+    cartItems = [];
+    localStorage.removeItem("cartItems");
+    renderCartItems();
 }
 
-// Adds product to cart, updates localStorage and re-renders UI
+/**
+ * Adds a product to the cart or increments its quantity if it already exists.
+ * @param {Object} product - Product to add (must have at least a `title` property).
+ */
 export function addToCart(product) {
-    // More robust duplicate checking
-    const existingItem = cartItems.find(item => 
+    const existingItem = cartItems.find(
+        (item) =>
         item.title?.trim().toLowerCase() === product.title?.trim().toLowerCase()
     );
 
     if (existingItem) {
         existingItem.quantity = (existingItem.quantity || 1) + 1;
     } else {
-        // Create a copy to avoid reference issues
-        const newProduct = { ...product, quantity: 1 };
-        cartItems.push(newProduct);
+        cartItems.push({ ...product, quantity: 1 });
     }
 
+    saveCartAndRender();
+}
+
+/**
+ * Save cart to localStorage and update UI.
+ */
+function saveCartAndRender() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     renderCartItems();
 }
 
-// Renders the current items in cartItems to the sidebar
+/**
+ * Render cart items inside the cart sidebar.
+ */
 function renderCartItems() {
     const cartItemsContainer = document.querySelector(".cart-items");
     const cartTotalCount = document.querySelector(".cart-total p:first-child");
@@ -88,116 +104,125 @@ function renderCartItems() {
 
     if (!cartItemsContainer) return;
 
-    cartItemsContainer.innerHTML = ""; // Clear existing items
+    cartItemsContainer.innerHTML = ""; // Clear existing content
 
     let totalPrice = 0;
 
     cartItems.forEach((item, index) => {
         const quantity = item.quantity || 1;
 
-        const itemHTML = `
-            <div class="cart-item" data-index="${index}">
-                <div class="cart-content">
-                    <img src="${item.image}" alt="${item.title}" />
-                    <div class="cart-item-info">
-                        <p>${item.title}</p>
-                        <p>${item.price}</p>
-                        <p>Quantity: ${quantity}</p>
-                        <div class="quantity-controls">
-                        <button class="quantity-btn decrease" data-index="${index}">-</button>
-                        <button class="quantity-btn increase" data-index="${index}">+</button>
-                    </div>
-                    </div>
-                </div>
-                <button class="remove-item-btn" aria-label="Remove">
-                    <svg class="trash-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6L18.4 19.4C18.3 20.6 17.3 21.5 16.1 21.5H7.9C6.7 21.5 5.7 20.6 5.6 19.4L5 6H19Z"></path>
-                        <path d="M10 11V17"></path>
-                        <path d="M14 11V17"></path>
-                    </svg>
-                </button>
-            </div>
-        `;
-        cartItemsContainer.insertAdjacentHTML("beforeend", itemHTML);
+        const price = parseFloat(item.price.replace(/[^0-9.]/g, "")) || 0;
+        totalPrice += price * quantity;
 
-        // Extract numeric value from price
-        const price = parseFloat(item.price.replace(/[^0-9.]/g, ""));
-        totalPrice += isNaN(price) ? 0 : price * quantity;
+        const itemHTML = `
+        <div class="cart-item" data-index="${index}">
+            <div class="cart-content">
+            <img src="${item.image}" alt="${item.title}" />
+            <div class="cart-item-info">
+                <p>${item.title}</p>
+                <p>${item.price}</p>
+                <p>Quantity: ${quantity}</p>
+                <div class="quantity-controls">
+                <button class="quantity-btn decrease" data-index="${index}">-</button>
+                <button class="quantity-btn increase" data-index="${index}">+</button>
+                </div>
+            </div>
+            </div>
+            <button class="remove-item-btn" aria-label="Remove">
+            <svg class="trash-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6L18.4 19.4C18.3 20.6 17.3 21.5 16.1 21.5H7.9C6.7 21.5 5.7 20.6 5.6 19.4L5 6H19Z"></path>
+                <path d="M10 11V17"></path>
+                <path d="M14 11V17"></path>
+            </svg>
+            </button>
+        </div>
+        `;
+
+        cartItemsContainer.insertAdjacentHTML("beforeend", itemHTML);
     });
 
-    // Update subtotal display
     if (cartTotalCount) {
-        cartTotalCount.textContent = `Subtotal (${cartItems.length} item${cartItems.length !== 1 ? 's' : ''}):`;
+        cartTotalCount.textContent = `Subtotal (${cartItems.length} item${cartItems.length !== 1 ? "s" : ""}):`;
     }
 
     if (cartTotalPrice) {
         cartTotalPrice.textContent = `$${totalPrice.toFixed(2)}`;
     }
 
-    // Attach event listeners to all remove buttons
     attachCartEventListeners();
 }
 
+/**
+ * Attach event listeners for remove and quantity buttons within cart items.
+ */
 function attachCartEventListeners() {
     const cartItemsContainer = document.querySelector(".cart-items");
     if (!cartItemsContainer) return;
 
     // Remove item buttons
-    cartItemsContainer.querySelectorAll(".remove-item-btn").forEach(button => {
+    cartItemsContainer.querySelectorAll(".remove-item-btn").forEach((button) => {
         button.addEventListener("click", (e) => {
-            const itemIndex = e.target.closest(".cart-item").dataset.index;
-            removeCartItem(parseInt(itemIndex));
+        const itemIndex = e.target.closest(".cart-item").dataset.index;
+        removeCartItem(Number(itemIndex));
         });
     });
 
     // Quantity increase buttons
-    cartItemsContainer.querySelectorAll(".quantity-btn.increase").forEach(button => {
+    cartItemsContainer.querySelectorAll(".quantity-btn.increase").forEach((button) => {
         button.addEventListener("click", (e) => {
-            const itemIndex = parseInt(e.target.dataset.index);
-            increaseQuantity(itemIndex);
+        const itemIndex = Number(e.target.dataset.index);
+        increaseQuantity(itemIndex);
         });
     });
 
     // Quantity decrease buttons
-    cartItemsContainer.querySelectorAll(".quantity-btn.decrease").forEach(button => {
+    cartItemsContainer.querySelectorAll(".quantity-btn.decrease").forEach((button) => {
         button.addEventListener("click", (e) => {
-            const itemIndex = parseInt(e.target.dataset.index);
-            decreaseQuantity(itemIndex);
+        const itemIndex = Number(e.target.dataset.index);
+        decreaseQuantity(itemIndex);
         });
     });
 }
 
-// Increase item quantity
+/**
+ * Increase quantity of a cart item by index.
+ * @param {number} index
+ */
 function increaseQuantity(index) {
     if (cartItems[index]) {
         cartItems[index].quantity = (cartItems[index].quantity || 1) + 1;
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-        renderCartItems();
+        saveCartAndRender();
     }
 }
 
-// Decrease item quantity
+/**
+ * Decrease quantity of a cart item by index, or remove if quantity reaches zero.
+ * @param {number} index
+ */
 function decreaseQuantity(index) {
     if (cartItems[index]) {
         if (cartItems[index].quantity > 1) {
-            cartItems[index].quantity -= 1;
-            localStorage.setItem("cartItems", JSON.stringify(cartItems));
-            renderCartItems();
+        cartItems[index].quantity -= 1;
+        saveCartAndRender();
         } else {
-            // If quantity is 1, remove item entirely
-            removeCartItem(index);
+        removeCartItem(index);
         }
     }
 }
 
+/**
+ * Remove a cart item by index.
+ * @param {number} index
+ */
 function removeCartItem(index) {
-    cartItems.splice(index, 1); // Remove item from array
-    localStorage.setItem("cartItems", JSON.stringify(cartItems)); // Update storage
-    renderCartItems(); // Re-render
+    cartItems.splice(index, 1);
+    saveCartAndRender();
 }
 
-// Function to print cart items to checkout page
+/**
+ * Render cart items on the checkout page.
+ */
 export function renderCheckoutItems() {
     const checkoutOrderContainer = document.querySelector(".order-items");
     const checkoutSubtotal = document.querySelector(".checkout-subtotal");
@@ -212,6 +237,8 @@ export function renderCheckoutItems() {
 
     cartItems.forEach((item) => {
         const quantity = item.quantity || 1;
+        const price = parseFloat(item.price.replace(/[^0-9.]/g, "")) || 0;
+        totalPrice += price * quantity;
 
         const itemHTML = `
         <div class="order-item">
@@ -225,26 +252,15 @@ export function renderCheckoutItems() {
             <div class="item-price">${item.price}</div>
         </div>
         `;
+
         checkoutOrderContainer.insertAdjacentHTML("beforeend", itemHTML);
-
-        // Extract numeric value from price
-        const price = parseFloat(item.price.replace(/[^0-9.]/g, ""));
-        totalPrice += isNaN(price) ? 0 : price * quantity;
-
     });
 
-    if (checkoutSubtotal) {
-        checkoutSubtotal.textContent = `$${totalPrice.toFixed(2)}`;
-    }
-
-    if (checkoutOrderTotal) {
-        checkoutOrderTotal.textContent = `$${totalPrice.toFixed(2)}`;
-    }
+    if (checkoutSubtotal) checkoutSubtotal.textContent = `$${totalPrice.toFixed(2)}`;
+    if (checkoutOrderTotal) checkoutOrderTotal.textContent = `$${totalPrice.toFixed(2)}`;
 
     if (taxesNote) {
-        const tax = totalPrice * 0.1;
+        const tax = totalPrice * 0.1; // Example 10% tax
         taxesNote.textContent = `Including $${tax.toFixed(2)} in taxes`;
     }
 }
-
-console.log(cartItems);

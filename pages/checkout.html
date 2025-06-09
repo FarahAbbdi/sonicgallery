@@ -1,65 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Checkout | Sonics Gallery</title>
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/checkout.css">
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/checkout.css" />
 </head>
 <body class="checkout-page">
     <header class="checkout-header">
-         <!-- Site logo -->
         <div class="checkout-logo">
-            <a href="/index.html" aria-label="Home">
-                <picture>
-                <source srcset="/assets/icons/logo.svg" type="image/svg+xml" />
-                <img src="/assets/icons/logo.svg" alt="Sonics Gallery Logo" />
-                </picture>
-            </a>
+        <a href="/index.html" aria-label="Home">
+            <picture>
+            <source srcset="/assets/icons/logo.svg" type="image/svg+xml" />
+            <img src="/assets/icons/logo.svg" alt="Sonics Gallery Logo" />
+            </picture>
+        </a>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="checkout-wrapper">
-        <!-- Left: Checkout Form -->
         <section class="checkout-left">
-            <div class="express-checkout">
-        <h3>Express Checkout</h3>
-        <div class="payment-options">
-        
-        <!-- Shop Pay Button with SVG -->
-        <button class="payment-button">
-            <img src="../assets/icons/shop-pay.svg" alt="PayPal" />
-        </button>
-
-        <!-- PayPal Button with iframe -->
-        <button class="payment-button">
-            <img src="../assets/icons/paypal.svg" alt="PayPal" />
-        </button>
-
-        <!-- Google Pay Button with iframe -->
-        <button class="payment-button">
-            <img src="../assets/icons/google-pay.svg" alt="google-pay" style="width: 50px;" />
-        </button>
-
-        </div>
+        <div class="express-checkout">
+            <h3>Express Checkout</h3>
+            <div class="payment-options">
+            <!-- Shop Pay Button with SVG -->
+            <button class="payment-button">
+                <img src="../assets/icons/shop-pay.svg" alt="Shop Pay" />
+            </button>
+            <!-- PayPal Button -->
+            <button class="payment-button">
+                <img src="../assets/icons/paypal.svg" alt="PayPal" />
+            </button>
+            <!-- Google Pay Button -->
+            <button class="payment-button">
+                <img
+                src="../assets/icons/google-pay.svg"
+                alt="Google Pay"
+                style="width: 50px;"
+                />
+            </button>
+            </div>
             <div class="divider"><span>OR</span></div>
         </div>
 
         <!-- Contact Info Form -->
         <form action="confirmation.html">
             <div class="section">
-                <h4>Contact</h4>
-                <input type="text" placeholder="Email or mobile phone number" />
-                <label><input type="checkbox" /> Email me with news and offers</label>
+            <h4>Contact</h4>
+            <input type="text" placeholder="Email or mobile phone number" />
+            <label><input type="checkbox" /> Email me with news and offers</label>
             </div>
 
             <!-- Delivery -->
             <div class="section">
-                <h4>Delivery</h4>
-                <label><input type="radio" name="delivery" checked /> Ship</label>
-                <label><input type="radio" name="delivery" /> Pickup in store</label>
+            <h4>Delivery</h4>
+            <label><input type="radio" name="delivery" checked /> Ship</label>
+            <label><input type="radio" name="delivery" /> Pickup in store</label>
 
             <select>
                 <option>Country/Region</option>
@@ -73,43 +70,56 @@
             </div>
 
             <input type="text" placeholder="Address" />
-        </div>
+            </div>
 
-        <!-- Payment -->
-        <section class="checkout-payment">
+            <!-- Payment -->
+            <section class="checkout-payment">
             <h2>Payment</h2>
             <p class="secure-note">All transactions are secure and encrypted.</p>
 
             <div class="payment-method">
                 <label class="payment-tab selected">
                 <span class="method-title">
-                    <span class="circle"></span> 
-                    Credit card
-                    <img src="../assets/icons/credit-cards.jpg" alt="Credit Cards" style="height: 20px;" />
+                    <span class="circle"></span> Credit card
+                    <img
+                    src="../assets/icons/credit-cards.jpg"
+                    alt="Credit Cards"
+                    style="height: 20px;"
+                    />
                 </span>
                 </label>
 
                 <div class="card-form">
-                    <input type="text" placeholder="Card number" />
-                    <div class="split-input">
-                        <input type="text" placeholder="Expiration date (MM / YY)" />
-                        <input type="text" placeholder="Security code" />
-                    </div>
-                    <input type="text" placeholder="Name on card" />
-                    <label><input type="checkbox" /> Use shipping as billing address</label>
+                <input type="text" placeholder="Card number" />
+                <div class="split-input">
+                    <input type="text" placeholder="Expiration date (MM / YY)" />
+                    <input type="text" placeholder="Security code" />
+                </div>
+                <input type="text" placeholder="Name on card" />
+                <label>
+                    <input type="checkbox" /> Use shipping as billing address
+                </label>
                 </div>
 
                 <label class="payment-tab">
                 <span class="method-title">
                     <span class="circle"></span> PayPal
-                    <img src="/assets/icons/paypal.svg" alt="PayPal" style="height: 20px;" />
+                    <img
+                    src="/assets/icons/paypal.svg"
+                    alt="PayPal"
+                    style="height: 20px;"
+                    />
                 </span>
                 </label>
 
                 <label class="payment-tab">
                 <span class="method-title">
                     <span class="circle"></span> Afterpay
-                    <img src="../assets/icons/afterpay.svg" alt="Afterpay" style="height: 40px;"/>
+                    <img
+                    src="../assets/icons/afterpay.svg"
+                    alt="Afterpay"
+                    style="height: 40px;"
+                    />
                 </span>
                 </label>
             </div>
@@ -125,42 +135,48 @@
             <button class="pay-button">Pay now</button>
 
             <p class="terms-note">
-                Your info will be saved to a Shop account. By continuing, you agree to Shop’s <a href="#">Terms of Service</a>.
+                Your info will be saved to a Shop account. By continuing, you agree
+                to Shop’s <a href="#">Terms of Service</a>.
             </p>
             </section>
         </form>
-    </section>
+        </section>
 
-    <section class="checkout-right">
+        <section class="checkout-right">
         <div class="order-items"></div>
 
         <div class="discount-section">
             <div class="discount-input">
-                <input type="text" placeholder="Discount code or gift card">
-                <button class="apply-btn">Apply</button>
+            <input type="text" placeholder="Discount code or gift card" />
+            <button class="apply-btn">Apply</button>
             </div>
         </div>
 
         <div class="order-totals">
             <div class="total-row">
-                <span>Subtotal</span>
-                <span class="checkout-subtotal"></span>
+            <span>Subtotal</span>
+            <span class="checkout-subtotal"></span>
             </div>
             <div class="total-row">
-                <span>Shipping</span>
-                <a class="shipping-link">Enter shipping address</a>
+            <span>Shipping</span>
+            <a class="shipping-link">Enter shipping address</a>
             </div>
             <div class="total-row final">
-                <span>Total</span>
-                <div style="text-align: right;">
-                    <div style="font-size: 14px; color: #666; font-weight: normal;">AUD</div>
-                    <div class="checkout-order-total">$0.00</div>
+            <span>Total</span>
+            <div style="text-align: right;">
+                <div
+                style="font-size: 14px; color: #666; font-weight: normal;"
+                >
+                AUD
                 </div>
+                <div class="checkout-order-total">$0.00</div>
+            </div>
             </div>
             <div class="taxes-note"></div>
         </div>
-    </section>
+        </section>
     </main>
+
     <script type="module" src="/scripts/main.js"></script>
 </body>
 </html>

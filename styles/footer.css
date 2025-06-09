@@ -1,4 +1,4 @@
-/* footer.css */
+/* === FOOTER CONTAINER === */
 
 .site-footer {
   background-color: var(--color-grey);
@@ -11,6 +11,8 @@
   min-width: var(--min-width); 
 }
 
+/* === FOOTER TEXT === */
+
 .site-footer p {
   margin-bottom: 0.5rem;
   font-weight: 300;
@@ -21,7 +23,7 @@
   margin-bottom: 1rem;
 }
 
-/* === Responsive Breakpoints === */
+/* === RESPONSIVE BREAKPOINTS === */
 
 @media (max-width: 1000px) {
   .site-footer {

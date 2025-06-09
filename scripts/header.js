@@ -1,6 +1,6 @@
-// header.js
-
-// === DROPDOWN MENU LOGIC ===
+/**
+ * Initializes dropdown menu toggle, open/close behaviors, and related event listeners.
+ */
 export function setupDropdownMenu() {
     const dropdownToggle = document.querySelector(".dropdown-toggle");
     const dropdownNav = document.querySelector(".dropdown-nav");
@@ -9,7 +9,20 @@ export function setupDropdownMenu() {
 
     if (!dropdownToggle || !dropdownNav || !overlay) return;
 
-    // Close dropdown and reset states
+    /**
+     * Opens the dropdown menu and applies necessary UI states.
+     */
+    function openDropdown() {
+        closeSearchOverlay();
+        dropdownNav.classList.add("open");
+        dropdownToggle.setAttribute("aria-expanded", "true");
+        body.classList.add("body-lock");
+        overlay.classList.add("show");
+    }
+
+    /**
+     * Closes the dropdown menu and resets UI states.
+     */
     function closeDropdown() {
         dropdownNav.classList.remove("open");
         dropdownToggle.setAttribute("aria-expanded", "false");
@@ -17,7 +30,9 @@ export function setupDropdownMenu() {
         overlay.classList.remove("show");
     }
 
-    // Show/hide dropdown based on viewport width
+    /**
+     * Shows or hides dropdown toggle and nav based on viewport width.
+     */
     function checkViewport() {
         if (window.innerWidth <= 1000) {
             closeDropdown();
@@ -32,33 +47,27 @@ export function setupDropdownMenu() {
     checkViewport();
     window.addEventListener("resize", checkViewport);
 
-    // Toggle dropdown open/close on click
     dropdownToggle.addEventListener("click", (e) => {
         e.stopPropagation();
         if (dropdownNav.style.display === "none") return;
 
-        const isOpen = dropdownNav.classList.contains("open");
-
-        if (isOpen) {
-            // Clicking toggle button closes dropdown
+        if (dropdownNav.classList.contains("open")) {
             closeDropdown();
         } else {
-            // Close search overlay if open before opening dropdown
-            closeSearchOverlay();
-
-            dropdownNav.classList.add("open");
-            dropdownToggle.setAttribute("aria-expanded", "true");
-            body.classList.add("body-lock");
-            overlay.classList.add("show");
+            openDropdown();
         }
     });
 
-    // Close dropdown when clicking on overlay
+    /**
+     * Closes dropdown when clicking on overlay.
+     */
     overlay.addEventListener("click", () => {
         if (dropdownNav.classList.contains("open")) closeDropdown();
     });
 
-    // Close dropdown if clicking outside
+    /**
+     * Closes dropdown if clicking outside dropdown or toggle button.
+     */
     document.addEventListener("click", (e) => {
         if (
             dropdownNav.classList.contains("open") &&
@@ -69,7 +78,9 @@ export function setupDropdownMenu() {
         }
     });
 
-    // Close dropdown on Escape key
+    /**
+     * Closes dropdown on Escape key press.
+     */
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && dropdownNav.classList.contains("open")) {
             closeDropdown();
@@ -77,7 +88,9 @@ export function setupDropdownMenu() {
     });
 }
 
-// === SIDEBAR NAVIGATION ===
+/**
+ * Initializes sidebar navigation toggle, submenu, and related event listeners.
+ */
 export function setupSidebarNavigation() {
     const menuToggle = document.querySelector(".menu-toggle");
     const sidebar = document.querySelector(".sidebar-nav");
@@ -85,50 +98,55 @@ export function setupSidebarNavigation() {
     const body = document.body;
 
     if (!menuToggle || !sidebar || !overlay) return;
-    
-    // Open sidebar and show overlay
-    function openSidebar() {
-        // Close search overlay if it is currently open
-        closeSearchOverlay();
 
+    /**
+     * Opens the sidebar navigation and updates UI states.
+     */
+    function openSidebar() {
+        closeSearchOverlay();
         sidebar.classList.add("open");
         overlay.classList.add("show");
         body.classList.add("body-lock");
     }
 
-    // Close sidebar and hide overlay
+    /**
+     * Closes the sidebar navigation and resets UI states.
+     */
     function closeSidebar() {
         sidebar.classList.remove("open");
         overlay.classList.remove("show");
         body.classList.remove("body-lock");
     }
 
-    // Toggle sidebar open/close on menu button click
     menuToggle.addEventListener("click", () => {
         if (sidebar.classList.contains("open")) {
-        closeSidebar();
+            closeSidebar();
         } else {
-        openSidebar();
+            openSidebar();
         }
     });
 
-    // Close sidebar when clicking overlay
+    /**
+     * Closes sidebar when clicking on overlay.
+     */
     overlay.addEventListener("click", () => {
         if (sidebar.classList.contains("open")) {
-        closeSidebar();
+            closeSidebar();
         }
     });
 
-    // Auto-close sidebar if viewport width exceeds 1000px
+    /**
+     * Auto-close sidebar and manage overlay & scroll lock on window resize.
+     */
     window.addEventListener("resize", () => {
-        const isSidebarOpen = sidebar.classList.contains("open")
         if (window.innerWidth > 1000 && sidebar.classList.contains("open")) {
-        closeSidebar();
+            closeSidebar();
         }
-        // Keep overlay and scroll lock if dropdown OR sidebar is open
-        const isDropdownOpen = document.querySelector(".dropdown-nav")?.classList.contains("open");
 
-        if (isSidebarOpen || isDropdownOpen) {
+        const dropdownOpen = document.querySelector(".dropdown-nav")?.classList.contains("open");
+        const sidebarOpen = sidebar.classList.contains("open");
+
+        if (dropdownOpen || sidebarOpen) {
             overlay.classList.add("show");
             body.classList.add("body-lock");
         } else {
@@ -137,26 +155,26 @@ export function setupSidebarNavigation() {
         }
     });
 
-    // Sidebar dropdown toggle for Clothing submenu 
+    // Sidebar submenu toggle
     const sidebarDropdownToggle = sidebar.querySelector(".sidebar-dropdown-toggle");
     const sidebarSubmenu = sidebar.querySelector(".sidebar-submenu");
 
     if (sidebarDropdownToggle && sidebarSubmenu) {
         sidebarDropdownToggle.addEventListener("click", () => {
-        const isShown = sidebarSubmenu.classList.toggle("show");
-        sidebarDropdownToggle.setAttribute("aria-expanded", isShown.toString());
+            const isShown = sidebarSubmenu.classList.toggle("show");
+            sidebarDropdownToggle.setAttribute("aria-expanded", isShown.toString());
         });
     }
 }
 
-// === SHARED HELPER FUNCTIONS ===
-
-// Helper to close the search overlay
+/**
+ * Closes the search overlay and resets its UI elements.
+ */
 function closeSearchOverlay() {
     const searchOverlay = document.querySelector(".search-overlay");
-    const overlay       = document.querySelector(".overlay");
-    const body          = document.body;
-    const searchInput   = document.querySelector(".search-overlay input[type='search']");
+    const overlay = document.querySelector(".overlay");
+    const body = document.body;
+    const searchInput = document.querySelector(".search-overlay input[type='search']");
     const searchResults = document.querySelector(".search-results");
 
     if (!searchOverlay || !overlay || !body || !searchInput || !searchResults) return;

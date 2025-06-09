@@ -1,7 +1,9 @@
-// search.js
-
 let combinedData = [];
 
+/**
+ * Sets up search overlay functionality including open/close,
+ * input listening, and UI state management.
+ */
 export function setupSearchOverlay() {
     const searchButton = document.querySelector(".btn-search");
     const cancelButton = document.querySelector(".cancel-search");
@@ -13,12 +15,18 @@ export function setupSearchOverlay() {
 
     if (!searchButton || !cancelButton || !searchOverlay || !overlay || !searchInput || !searchResults) return;
 
+    /**
+     * Opens the search overlay and applies UI lock.
+     */
     function openSearch() {
         searchOverlay.classList.add("open");
         overlay.classList.add("show");
         body.classList.add("body-lock");
     }
 
+    /**
+     * Closes the search overlay and clears input/results.
+     */
     function closeSearch() {
         searchOverlay.classList.remove("open");
         overlay.classList.remove("show");
@@ -27,31 +35,32 @@ export function setupSearchOverlay() {
         searchResults.innerHTML = "";
     }
 
-    // Helper to close sidebar if its open
+    /**
+     * Closes the sidebar if it is currently open.
+     * Does not remove overlay or body-lock since search overlay will handle that.
+     */
     function closeSidebarIfOpen() {
         const sidebar = document.querySelector(".sidebar-nav");
         if (sidebar?.classList.contains("open")) {
             sidebar.classList.remove("open");
-            // We do NOT remove overlay/body-lock here, since search will re-add them below
         }
     }
 
-    // Toggle open/close on icon click
+    // Toggle search overlay open/close when search button clicked
     searchButton.addEventListener("click", () => {
         const isOpen = searchOverlay.classList.toggle("open");
         searchButton.setAttribute("aria-expanded", isOpen.toString());
 
         if (isOpen) {
-
             closeSidebarIfOpen();
 
             const dropdownNav = document.querySelector(".dropdown-nav");
             const dropdownToggle = document.querySelector(".dropdown-toggle");
             if (dropdownNav?.classList.contains("open")) {
-                // Keep the overlay but remove the dropdown nav
                 dropdownNav.classList.remove("open");
                 dropdownToggle?.setAttribute("aria-expanded", "false");
             }
+
             overlay.classList.add("show");
             body.classList.add("body-lock");
         } else {
@@ -59,17 +68,17 @@ export function setupSearchOverlay() {
         }
     });
 
-    // Cancel button
+    // Close search on cancel button click
     cancelButton.addEventListener("click", closeSearch);
 
-    // Close on Escape key
+    // Close search overlay on Escape key press
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && searchOverlay.classList.contains("open")) {
             closeSearch();
         }
     });
 
-    // Close on clicking overlay (only if search overlay is open and dropdown isn't)
+    // Close search overlay when clicking outside on overlay if dropdown is not open
     overlay.addEventListener("click", () => {
         const isSearchOpen = searchOverlay.classList.contains("open");
         const isDropdownOpen = document.querySelector(".dropdown-nav")?.classList.contains("open");
@@ -77,12 +86,12 @@ export function setupSearchOverlay() {
         if (isSearchOpen && !isDropdownOpen) closeSearch();
     });
 
-    // Perform search when typing
+    // Trigger search on input change
     searchInput.addEventListener("input", () => {
         performSearch(searchInput.value);
     });
 
-    // Resize listener to maintain overlay and body-lock state ---
+    // Maintain overlay and body-lock state on window resize
     window.addEventListener("resize", () => {
         const isSearchOpen = searchOverlay.classList.contains("open");
         const isDropdownOpen = document.querySelector(".dropdown-nav")?.classList.contains("open");
@@ -97,7 +106,10 @@ export function setupSearchOverlay() {
     });
 }
 
-// Load all JSON files from data folder, combine into one array for searching
+/**
+ * Loads and combines product data from multiple JSON files
+ * to enable searching across all categories.
+ */
 export async function loadSearchData() {
     const files = [
         "accessories.json",
@@ -109,32 +121,37 @@ export async function loadSearchData() {
         "tshirts.json"
     ];
 
-    // For each file, fetch and tag items with category & id
+    // Fetch each file, attach category & id to each item, handle errors gracefully
     const fetches = files.map(file =>
         fetch(`../data/${file}`)
-        .then(res => {
-            if (!res.ok) throw new Error(`Failed to load ${file}`);
-            return res.json();
-        })
-        .then(dataArray => {
-            const category = file.replace(".json", ""); // derive category
-            return dataArray.map((item, index) => ({
-            ...item,
-            category,    // attach category
-            id: index    // attach index (id)
-            }));
-        })
-        .catch(err => {
-            console.error(err);
-            return []; // return empty array on failure
-        })
+            .then(res => {
+                if (!res.ok) throw new Error(`Failed to load ${file}`);
+                return res.json();
+            })
+            .then(dataArray => {
+                const category = file.replace(".json", "");
+                return dataArray.map((item, index) => ({
+                    ...item,
+                    category,
+                    id: index
+                }));
+            })
+            .catch(err => {
+                console.error(err);
+                return [];
+            })
     );
 
     const results = await Promise.all(fetches);
-    combinedData = results.flat(); // flatten arrays into one
+    combinedData = results.flat();
 }
 
-// Perform search and show results
+/**
+ * Performs a search on the combined data and updates the search results UI.
+ * Shows a message if no results found or clears results for short queries.
+ * 
+ * @param {string} query - The search query string.
+ */
 function performSearch(query) {
     const searchResults = document.querySelector(".search-results");
     if (!searchResults) return;
@@ -147,9 +164,14 @@ function performSearch(query) {
     }
 
     const filtered = combinedData.filter(item => {
-      const title = item.title?.toLowerCase() || "";
-      return title.includes(normalizedQuery);
+        const title = item.title?.toLowerCase() || "";
+        return title.includes(normalizedQuery);
     });
+
+    if (filtered.length === 0) {
+        searchResults.innerHTML = `<li class="no-results">No results found</li>`;
+        return;
+    }
 
     searchResults.innerHTML = filtered.map(item => `
         <li class="search-result-item">
@@ -162,9 +184,4 @@ function performSearch(query) {
             </a>
         </li>
     `).join("");
-
-    if (filtered.length === 0) {
-        searchResults.innerHTML = `<li class="no-results">No results found</li>`;
-        return;
-    }
 }
