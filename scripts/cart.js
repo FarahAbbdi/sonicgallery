@@ -123,7 +123,7 @@ function renderCartItems() {
 
         // Extract numeric value from price
         const price = parseFloat(item.price.replace(/[^0-9.]/g, ""));
-        totalPrice += isNaN(price) ? 0 : price;
+        totalPrice += isNaN(price) ? 0 : price * quantity;
     });
 
     // Update subtotal display
@@ -229,7 +229,7 @@ export function renderCheckoutItems() {
 
         // Extract numeric value from price
         const price = parseFloat(item.price.replace(/[^0-9.]/g, ""));
-        totalPrice += isNaN(price) ? 0 : price;
+        totalPrice += isNaN(price) ? 0 : price * quantity;
 
     });
 
