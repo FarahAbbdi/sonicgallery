@@ -273,6 +273,18 @@ main {
   border-radius: 50%;
 }
 
+.billing {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.billing input[type="checkbox"] {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+}
+
+
 .method-title img {
   margin-left: auto;
 }
