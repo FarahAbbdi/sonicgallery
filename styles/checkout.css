@@ -95,9 +95,9 @@ main {
 }
 
 .payment-button:nth-child(3) {
-  background: var(--color-affirm);
+  background: var(--color-black);
   color: var(--color-white);
-  border-color: var(--color-affirm);
+  border-color: var(--color-black);
   padding-top: 0;
   padding-bottom: 0;
 }
