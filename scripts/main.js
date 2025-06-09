@@ -1,8 +1,8 @@
-import { includeHTML, loadProductGrid } from "/scripts/include.js";
-import { setupDropdownMenu, setupSidebarNavigation } from "/scripts/header.js";
-import { loadProductDetail } from "/scripts/product-detail.js";
-import { setupSearchOverlay, loadSearchData } from "/scripts/search.js";
-import { setupCartSidebar, renderCheckoutItems, clearCart } from "/scripts/cart.js";
+import { includeHTML, loadProductGrid } from "./include.js";
+import { setupDropdownMenu, setupSidebarNavigation } from "./header.js";
+import { loadProductDetail } from "./product-detail.js";
+import { setupSearchOverlay, loadSearchData } from "./search.js";
+import { setupCartSidebar, renderCheckoutItems, clearCart } from "./cart.js";
 
 /**
  * Load reusable HTML components into the page.
