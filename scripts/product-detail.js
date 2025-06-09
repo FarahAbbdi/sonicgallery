@@ -1,4 +1,4 @@
-import { addToCart } from "/scripts/cart.js";
+import { addToCart } from "./cart.js";
 
 /**
  * Loads product detail into the specified container based on URL parameters.
