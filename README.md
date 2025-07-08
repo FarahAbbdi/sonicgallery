@@ -5,8 +5,9 @@ This project is a complete **redesign and implementation** of the Sonic’s Gall
 - 🎨 A **Figma prototype** redesign key customer journey pages
 - 💻 A **static HTML/CSS/JavaScript implementation** based on the prototype.
 
-🔗 [Live Prototype (Figma)](https://XXXXXXX.com)  
-🔗 [Live Site](sonicgallery.vercel.app)
+🔗 [Live Prototype Website (Figma)](https://www.figma.com/design/PmMLRoOLSrrUkKUcBj3qMq/INFO20003-A2---Webpage-Prototype?node-id=1-2&p=f&t=dCwRE4ABEs0J3CMq-0)  
+🔗 [Live Prototype Mobile (Figma)](https://www.figma.com/design/9w2FMAjQW8cQMhCgFp82Sr/INFO20003-A2---Mobile-Prototype?t=dCwRE4ABEs0J3CMq-0)
+🔗 [Live Site](https://sonicgallery.vercel.app)
 
 ---
 
@@ -18,7 +19,7 @@ This project is a complete **redesign and implementation** of the Sonic’s Gall
 - [Project Structure](#project-structure)
 - [Disclaimer](#disclaimer)
 - [Credits](#credits)
-- 
+  
 ---
 
 ## ✨ Features
@@ -42,7 +43,7 @@ This project is a complete **redesign and implementation** of the Sonic’s Gall
 - **CSS3** – Responsive layout with reusable modules  
 - **JavaScript (Vanilla)** – Component loading, search, cart logic  
 - **JSON** – Product data handling  
-- **Vercel** – Hosting (live deployment
+- **Vercel** – Hosting (live deployment)
 
 ---
 
