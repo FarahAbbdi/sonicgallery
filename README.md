@@ -13,12 +13,12 @@ This project is a complete **redesign and implementation** of the Sonic’s Gall
 
 ## 📚 Table of Contents
 
-- [Features](#features)
-- [Page Comparisons](#page-comparisons)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Disclaimer](#disclaimer)
-- [Credits](#credits)
+- [Features](#-features)
+- [Page Comparisons](#-page-comparisons)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Disclaimer](#-disclaimer)
+- [Credits](#-credits)
   
 ---
 
@@ -34,6 +34,46 @@ This project is a complete **redesign and implementation** of the Sonic’s Gall
 ---
 
 ## 🖼 Page Comparisons
+
+Each of the following pages was redesigned for improved usability, layout clarity, and mobile responsiveness.
+
+### 🏠 Home Page
+
+| Before | After |
+|--------|-------|
+| ![Home Before](https://via.placeholder.com/300x180?text=Home+Before) | ![Home After](https://via.placeholder.com/300x180?text=Home+After) |
+
+---
+
+### 🔎 Search Results
+
+| Before | After |
+|--------|-------|
+| ![Search Before](https://via.placeholder.com/300x180?text=Search+Before) | ![Search After](https://via.placeholder.com/300x180?text=Search+After) |
+
+---
+
+### 📄 Product Page
+
+| Before | After |
+|--------|-------|
+| ![Product Before](https://via.placeholder.com/300x180?text=Product+Before) | ![Product After](https://via.placeholder.com/300x180?text=Product+After) |
+
+---
+
+### 🛒 Cart Page
+
+| Before | After |
+|--------|-------|
+| ![Cart Before](https://via.placeholder.com/300x180?text=Cart+Before) | ![Cart After](https://via.placeholder.com/300x180?text=Cart+After) |
+
+---
+
+### 💳 Checkout & Confirmation
+
+| Before | After |
+|--------|-------|
+| ![Checkout Before](https://via.placeholder.com/300x180?text=Checkout+Before) | ![Checkout After](https://via.placeholder.com/300x180?text=Checkout+After) |
 
 ---
 
