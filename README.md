@@ -41,7 +41,7 @@ Each of the following pages was redesigned for improved usability, layout clarit
 
 | Before | After |
 |--------|-------|
-| ![Home Before](https://via.placeholder.com/300x180?text=Home+Before) | ![Home After](https://via.placeholder.com/300x180?text=Home+After) |
+| ![Home Before](readme-assets/old-landing-page.png) | ![Home After](readme-assets/new-landing-page.png) |
 
 ---
 
@@ -49,7 +49,7 @@ Each of the following pages was redesigned for improved usability, layout clarit
 
 | Before | After |
 |--------|-------|
-| ![Search Before](https://via.placeholder.com/300x180?text=Search+Before) | ![Search After](https://via.placeholder.com/300x180?text=Search+After) |
+| ![Search Before](readme-assets/old-search-bar.png) | ![Search After](readme-assets/new-search-bar.png) |
 
 ---
 
@@ -57,7 +57,15 @@ Each of the following pages was redesigned for improved usability, layout clarit
 
 | Before | After |
 |--------|-------|
-| ![Product Before](https://via.placeholder.com/300x180?text=Product+Before) | ![Product After](https://via.placeholder.com/300x180?text=Product+After) |
+| ![Product Before](readme-assets/old-product-page.png) | ![Product After](readme-assets/new-product-page.png) |
+
+---
+
+### 🛍 All Products Page
+
+| Before | After |
+|--------|-------|
+| ![Products Before](readme-assets/old-products-page.png) | ![Products After](readme-assets/new-products-page.png) |
 
 ---
 
@@ -65,7 +73,7 @@ Each of the following pages was redesigned for improved usability, layout clarit
 
 | Before | After |
 |--------|-------|
-| ![Cart Before](https://via.placeholder.com/300x180?text=Cart+Before) | ![Cart After](https://via.placeholder.com/300x180?text=Cart+After) |
+| ![Cart Before](readme-assets/old-cart-page.png) | ![Cart After](readme-assets/new-cart-page.png) |
 
 ---
 
@@ -73,7 +81,7 @@ Each of the following pages was redesigned for improved usability, layout clarit
 
 | Before | After |
 |--------|-------|
-| ![Checkout Before](https://via.placeholder.com/300x180?text=Checkout+Before) | ![Checkout After](https://via.placeholder.com/300x180?text=Checkout+After) |
+| ![Checkout Before](readme-assets/old-checkout-page.png) | ![Checkout After](readme-assets/new-checkout-page.png) |
 
 ---
 
@@ -156,7 +164,7 @@ I am not affiliated with Sonic’s Gallery — this is a non-commercial redesign
 
 ---
 
-## 🌟 Credits & Acknowledgments
+## 🌟 Credits
 
 - **Design & Development:** Farah  
 - **Course:** INFO20005 – User Interface Design
